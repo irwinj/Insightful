@@ -1,4 +1,5 @@
-class PersonalityController < ApplicationController
+class PersonalitiesController < ApplicationController
+  before_action :authenticate_user!
   def create
   end
 
