@@ -1,0 +1,2 @@
+module PersonalityHelper
+end
