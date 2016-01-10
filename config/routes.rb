@@ -8,13 +8,17 @@ Rails.application.routes.draw do
   root 'personalities#index'
 
   # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
+  get 'search' => 'personalities#search'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
     resources :user
+
+    resources :personalities
+
+
 
   # Example resource route with options:
   #   resources :products do
