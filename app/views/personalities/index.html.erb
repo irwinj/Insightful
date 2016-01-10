@@ -1,3 +1,10 @@
 <h1>Personality#index</h1>
-<p>Find me in app/views/personality/index.html.erb</p>
+<%= form_tag("/search", :method => "get") do %>
+  <%= label_tag(:q, "Search for:") %>
+  <%= text_area_tag(:q, nil, cols: 80, rows: 20 ) %>
+
+  <%= label_tag(:title, "Search Title") %>
+  <%= text_field_tag(:title) %>
+  <%= submit_tag("Search") %>
+<% end %>
 
