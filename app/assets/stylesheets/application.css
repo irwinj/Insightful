@@ -14,9 +14,17 @@
  *= require_self
  */
 
-div.bar {
+ circle,
+ path {
+   cursor: pointer;
+ }
+
+ circle {
+   fill: none;
+   pointer-events: all;
+ }
+
+rect {
   display: inline-block;
-  width: 20px;
-  height: 75px;
   background-color: teal;
 }
