@@ -30,5 +30,15 @@ class PersonalitiesController < ApplicationController
       'body'             => params["q"])
 
     @results = JSON.parse(result.body)
+# see personalities controller for info passed through
+# @results is returning parsed JSON, personalities is table
+    new_record = Personality.new
+    new_record.data = result
+# q is the data the form sent through
+    new_record.input = params["q"]
+    new_record.title = params["title"]
+    new_record.save
   end
+
+
 end
