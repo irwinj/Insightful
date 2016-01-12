@@ -16,7 +16,7 @@ class PersonalitiesController < ApplicationController
   end
 
   def recent
-    @recent = Personality.all()
+    @recent = Personality.last(2).reverse
   end
 
   def results
