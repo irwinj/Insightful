@@ -7,4 +7,6 @@ class User < ActiveRecord::Base
     validates :username,
 	  presence: true,
 	  length: { in: 3..20}
+
+	  has_and_belongs_to_many :personalities
 end
