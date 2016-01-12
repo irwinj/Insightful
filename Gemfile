@@ -29,13 +29,21 @@ gem 'pry'
 
 gem 'twitter', '~> 5.15'
 
+gem 'bootstrap', '~> 4.0.0.alpha3'
+
 gem 'bootstrap_form'
 
+# login
 gem 'devise'
+
 
 gem 'watson-api-client'
 
 gem 'simple_form'
+
+gem 'devise-bootstrap-views'
+
+
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
