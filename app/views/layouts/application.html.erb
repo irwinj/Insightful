@@ -7,11 +7,10 @@
   <%= csrf_meta_tags %>
 </head>
 
-<!-- This sets the body class name to the current controller in use, and the current method in use. -->
 <body>
-  
-<%= render "devise/shared/links" %> <%= link_to "Search", "/" %> <%= link_to "Recent", "/recent" %>
 
+<%= render "devise/shared/links" %> <%= link_to "Search", "/" %> <%= link_to "Recent", "/recent" %>
+<%= yield %>
 <script src="//d3js.org/d3.v3.min.js"></script>
 
 </body>
