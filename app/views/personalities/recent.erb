@@ -1,0 +1,9 @@
+<h1>Recent Searches</h1>
+<ul>
+  <% @recent.each do |item| %>
+    <li>
+      <h3><%= link_to "#{item.title}", "/show/#{item.id}" %></h3>
+      <%= item.input[0..300] %>
+    </li>
+  <% end %>
+</ul>

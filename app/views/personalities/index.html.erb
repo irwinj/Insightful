@@ -1,5 +1,5 @@
 <h1>Personality#index</h1>
-<%= form_tag("/search", :method => "get") do %>
+<%= form_tag("/search", :method => "POST") do %>
   <%= label_tag(:q, "Search for:") %>
   <%= text_area_tag(:q, nil, cols: 80, rows: 20 ) %>
 

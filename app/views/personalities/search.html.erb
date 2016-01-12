@@ -1,10 +1,2 @@
-<!-- see personalities controller for info passed through -->
-<!-- @results is returning parsed JSON, personalities is table -->
-new_record = Personalities.new
-new_record.data = <%= @results %>
-<!-- q is the data the form sent through -->
-new_record.input = <%= "q" %>
-<!-- title isn't mentioned in controller but is in index.html.erb -->
-new_record.title = <%= "title" %>
-new_record.save
-
+<h1>Personality Results</h1>
+ <%= @results %>

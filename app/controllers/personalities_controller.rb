@@ -15,7 +15,23 @@ class PersonalitiesController < ApplicationController
   def index
   end
 
+  def recent
+    @recent = Personality.all()
+  end
+
+  def results
+    @watson = @@data
+    respond_to do |format|
+      format.html
+      if @watson
+        format.json {render json: @watson}
+      end
+    end
+  end
+
   def show
+    @@data ||= Personality.find(params[:id])
+    redirect_to "/results"
   end
 
   def search
