@@ -80,7 +80,7 @@ function dThree(){
       .enter()
       .append("text")
       .text(function(d) {
-        return d.name + " " + (d.percentage.toFixed(2)) + "%";
+        return d.name + " " + (d.percentage * 100) .toFixed(1) + "%";
       })
     .attr("fill", "rgb(255, 255, 255)")
     .attr("fill-opacity", "0.0");
