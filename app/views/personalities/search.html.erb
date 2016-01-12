@@ -1,2 +1,9 @@
-<h1>Personality Results</h1>
- <%= @results %>
+<h1>Results</h1>
+<h3><%= @watson.title %></h3>
+<div id="watson_data" params="<%= @params_id %>"></div>
+
+<script>
+$(document).ready(function(){
+  dThree()
+});
+</script>

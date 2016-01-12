@@ -54,6 +54,9 @@ class PersonalitiesController < ApplicationController
     new_record.input = params["q"]
     new_record.title = params["title"]
     new_record.save
+    @last_record = Personality.last
+    @params_id = @last_record.id
+    @watson = @last_record
   end
 
 
