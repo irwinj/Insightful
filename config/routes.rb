@@ -14,9 +14,10 @@ Rails.application.routes.draw do
   post 'search' => 'personalities#search'
 
   get 'show' => 'personalities#show'
+
   get 'show/:id' => 'personalities#show'
 
-  get "/results" => 'personalities#results'
+  get "/results/:id" => 'personalities#results', as: 'results'
 
   get "/recent" => 'personalities#recent'
 

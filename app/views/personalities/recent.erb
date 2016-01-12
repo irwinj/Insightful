@@ -2,7 +2,7 @@
 <ul>
   <% @recent.each do |item| %>
     <li>
-      <h3><%= link_to "#{item.title}", "/show/#{item.id}" %></h3>
+      <a href="/results/<%= item.id %>"><h3><%= item.title %></h3></a>
       <%= item.input[0..300] %>
     </li>
   <% end %>

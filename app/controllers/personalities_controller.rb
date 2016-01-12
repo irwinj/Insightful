@@ -20,7 +20,8 @@ class PersonalitiesController < ApplicationController
   end
 
   def results
-    @watson = @@data
+    @params_id = params[:id]
+    @watson = Personality.find(params[:id])
     respond_to do |format|
       format.html
       if @watson
@@ -30,8 +31,7 @@ class PersonalitiesController < ApplicationController
   end
 
   def show
-    @@data ||= Personality.find(params[:id])
-    redirect_to "/results"
+
   end
 
   def search
