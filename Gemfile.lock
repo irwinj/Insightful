@@ -38,9 +38,15 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.4.0)
     arel (6.0.3)
+    autoprefixer-rails (6.2.3)
+      execjs
+      json
     bcrypt (3.1.10)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bootstrap (4.0.0.alpha3)
+      autoprefixer-rails (>= 6.0.3)
+      sass (>= 3.4.19)
     bootstrap_form (2.3.0)
     buftok (0.2.0)
     builder (3.2.2)
@@ -64,6 +70,7 @@ GEM
       responders
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
+    devise-bootstrap-views (0.0.7)
     domain_name (0.5.25)
       unf (>= 0.0.5, < 1.0.0)
     dotenv (2.0.2)
@@ -215,11 +222,13 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt (~> 3.1.7)
+  bootstrap (~> 4.0.0.alpha3)
   bootstrap_form
   byebug
   coffee-rails (~> 4.1.0)
   d3js-rails
   devise
+  devise-bootstrap-views
   dotenv-rails
   jbuilder (~> 2.0)
   jquery-rails
