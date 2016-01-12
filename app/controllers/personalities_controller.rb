@@ -15,7 +15,23 @@ class PersonalitiesController < ApplicationController
   def index
   end
 
+  def recent
+    @recent = Personality.last(2).reverse
+  end
+
+  def results
+    @params_id = params[:id]
+    @watson = Personality.find(params[:id])
+    respond_to do |format|
+      format.html
+      if @watson
+        format.json {render json: @watson}
+      end
+    end
+  end
+
   def show
+
   end
 
   def search
@@ -38,6 +54,9 @@ class PersonalitiesController < ApplicationController
     new_record.input = params["q"]
     new_record.title = params["title"]
     new_record.save
+    @last_record = Personality.last
+    @params_id = @last_record.id
+    @watson = @last_record
   end
 
 
