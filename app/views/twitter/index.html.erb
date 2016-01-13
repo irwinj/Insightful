@@ -1,4 +1,4 @@
-<h1>calltwitter#search</h1>
+<h1>twitter#search</h1>
 <%= form_tag("/twitter/search", :method => "POST") do %>
   <h2><%= label_tag(:q, "Search for:") %></h2>
   <%= text_area_tag(:q, nil, cols: 80, rows: 20 ) %>
