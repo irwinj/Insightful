@@ -298,6 +298,7 @@ function globalFiveFunc(){
   findGlobalFive(globalFive);
 }
 
+//Determines which myers briggs acronym the big five is//
 function findGlobalFive(mbti){
   var myersBriggs;
   if (mbti === "RCUAI" || mbti === "RLUAI") {
@@ -338,6 +339,7 @@ function findGlobalFive(mbti){
   mbtiFunc(myersBriggs);
 }
 
+//Displays a summary of personality type//
 function mbtiFunc(mbti) {
   $.getJSON('../mbti.json', function(data) {
     data.forEach(function(d) {
