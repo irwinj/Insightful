@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   # Example of regular route:
   post 'search' => 'personalities#search'
-  post '/twitter/search' => 'twitter#search'
+  post 'twitter/search' => 'personalities#twitter_search'
 
   get 'show' => 'personalities#show'
 
