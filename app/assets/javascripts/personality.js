@@ -344,7 +344,7 @@ function mbtiFunc(mbti) {
   $.getJSON('../mbti.json', function(data) {
     data.forEach(function(d) {
       if (d.name == mbti) {
-        $("#personality").text(d.summary);
+        $("#personality").html(d.summary);
       }
     });
   });
