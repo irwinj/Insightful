@@ -1,0 +1,49 @@
+[
+  {"name": "INFP",
+  "summary": "For INFPs the dominant quality in their lives is a deep-felt caring and idealism about people. They experience this intense caring most often in their relationships with others, but they may also experience it around ideas, projects, or any involvement they see as important. INFPs are often skilled communicators, and they are naturally drawn to ideas that embody a concern for human potential. INFPs live in the inner world of values and ideals, but what people often first encounter with the INFP in the outer world is their adaptability and concern for possibilities." },
+
+{"name": "INTP",
+  "summary": "For INTPs the driving force in their lives is to understand whatever phenomenon is the focus of their attention. They want to make sense of the world -- as a concept -- and they often enjoy opportunities to be creative. INTPs are logical, analytical, and detached in their approach to the world; they naturally question and critique ideas and events as they strive for understanding. INTPs usually have little need to control the outer world, or to bring order to it, and they often appear very flexible and adaptable in their lifestyle."},
+
+{"name": "INFJ",
+  "summary": "For INFJs the dominant quality in their lives is their attention to the inner world of possibilities, ideas, and symbols. Knowing by way of insight is paramount for INFJs, and they often manifest a deep concern for people and relationships as well. INFJs often have deep interests in creative expression as well as issues of spirituality and human development. While the energy and attention of INFJs are naturally drawn to the inner world of ideas and insights, what people often first encounter with INFJs is their drive for closure and for the application of their ideas to people's concerns."},
+
+{"name": "INTJ",
+  "summary": "For INTJs the dominant force in their lives is their attention to the inner world of possibilities, symbols, abstractions, images, and thoughts. Insight in conjunction with logical analysis is the essence of their approach to the world; they think systemically. Ideas are the substance of life for INTJs and they have a driving need to understand, to know, and to demonstrate competence in their areas of interest. INTJs inherently trust their insights, and with their task-orientation will work intensely to make their visions into realities."},
+
+{"name": "ISTJ",
+   "summary": "For ISTJs the dominant quality in their lives is an abiding sense of responsibility for doing what needs to be done in the here-and-now. Their realism, organizing abilities, and command of the facts lead to their completing tasks thoroughly and with great attention to detail. Logical pragmatists at heart, ISTJs make decisions based on their experience and with an eye to efficiency in all things. ISTJs are intensely committed to people and to the organizations of which they are a part; they take their work seriously and believe others should do so as well."},
+
+{"name": "ISFJ",
+  "summary": "For ISFJs the dominant quality in their lives is an abiding respect and sense of personal responsibility for doing what needs to be done in the here-and-now. Actions that are of practical help to others are of particular importance to ISFJs. Their realism, organizing abilities, and command of the facts lead to their thorough attention in completing tasks. ISFJs bring an aura of quiet warmth, caring, and dependability to all that they do; they take their work seriously and believe others should do so as well."},
+
+{"name": "ISTP",
+  "summary": "For ISTPs the driving force in their lives is to understand how things and phenomena in the real world work so they can make the best and most effective use of them. ISTPs are logical and realistic people, and they are natural troubleshooters. When not actively solving a problem, ISTPs are quiet and analytical observers of their environment, and they naturally look for the underlying sense to any facts they have gathered. ISTPs do often pursue variety and even excitement in their hands-on experiences. Although they do have a spontaneous, even playful side, what people often first encounter with them is their detached pragmatism."},
+
+{"name": "ISFP",
+  "summary": "For ISFPs the dominant quality in their lives is a deep-felt caring for living things, combined with a quietly playful and sometimes adventurous approach to life and all its experiences. ISFPs typically show their caring in very practical ways, since they often prefer action to words. Their warmth and concern are generally not expressed openly, and what people often first encounter with ISFPs is their quiet adaptability, realism, and free spirit spontaneity."},
+
+{"name": "ENFP",
+  "summary": "For ENFPs the dominant quality in their lives is their attention to the outer world of possibilities; they are excited by continuous involvement in anything new, whether it be new ideas, new people, or new activities. Though ENFPs thrive on what is possible and what is new, they also experience a deep concern for people as well. Thus, they are especially interested in possibilities for people. ENFPs are typically energetic, enthusiastic people who lead spontaneous and adaptable lives."},
+
+{"name": "ENTP",
+  "summary": "For ENTPs the driving quality in their lives is their attention to the outer world of possibilities; they are excited by continuous involvement in anything new, whether it be new ideas, new people, or new activities. They look for patterns and meaning in the world, and they often have a deep need to analyze, to understand, and to know the nature of things. ENTPs are typically energetic, enthusiastic people who lead spontaneous and adaptable lives."},
+
+{"name": "ENFJ",
+  "summary": "For ESFJs the dominant quality in their lives is an active and intense caring about people and a strong desire to bring harmony into their relationships. ESFJs bring an aura of warmth to all that they do, and they naturally move into action to help others, to organize the world around them, and to get things done. Sensing orients their feeling to current facts and realities, and thus gives their feeling a hands-on pragmatic quality. ESFJs take their work seriously and believe others should as well."},
+
+{"name": "ENTJ",
+  "summary": "For ENTJs the driving force in their lives is their need to analyze and bring into logical order the outer world of events, people, and things. ENTJs are natural leaders who build conceptual models that serve as plans for strategic action. Intuition orients their thinking to the future, and gives their thinking an abstract quality. ENTJs will actively pursue and direct others in the pursuit of goals they have set, and they prefer a world that is structured and organized."},
+
+{"name": "ESTJ",
+  "summary": "For ESTJs the driving force in their lives is their need to analyze and bring into logical order the outer world of events, people, and things. ESTJs like to organize anything that comes into their domain, and they will work energetically to complete tasks so they can quickly move from one to the next. Sensing orients their thinking to current facts and realities, and thus gives their thinking a pragmatic quality. ESTJs take their responsibilities seriously and believe others should do so as well."},
+
+{"name": "ESFJ",
+  "summary": "For ESFJs the dominant quality in their lives is an active and intense caring about people and a strong desire to bring harmony into their relationships. ESFJs bring an aura of warmth to all that they do, and they naturally move into action to help others, to organize the world around them, and to get things done. Sensing orients their feeling to current facts and realities, and thus gives their feeling a hands-on pragmatic quality. ESFJs take their work seriously and believe others should as well."},
+
+{"name": "ESTP",
+  "summary": "For ESTPs the dominant quality in their lives is their enthusiastic attention to the outer world of hands-on and real-life experiences. ESTPs are excited by continuous involvement in new activities and in the pursuit of new challenges. ESTPs tend to be logical and analytical in their approach to life, and they have an acute sense of how objects, events, and people in the world work. ESTPs are typically energetic and adaptable realists, who prefer to experience and accept life rather than to judge or organize it."},
+
+{"name": "ESFP",
+  "summary": "For ESFPs the dominant quality in their lives is their enthusiastic attention to the outer world of hands-on and real-life experiences. ESFPs are excited by continuous involvement in new activities and new relationships. ESFPs also have a deep concern for people, and they show their caring in warm and pragmatic gestures of helping. ESFPs are typically energetic and adaptable realists, who prefer to experience and accept life rather than to judge or organize it."}
+]

@@ -1,6 +1,15 @@
-<div>
+<div class="user">
 	<ul>
-		<%= @user.username %>
-		<%= @user.email %>
+		Username: <%= @user.username %>
 	</ul>
+	<ul>
+		Email: <%= @user.email %>
+	</ul>
+</div>
+
+<div>
+	
+	<% @user.personalities.each do |personality| %>
+	<%= link_to personality.title, personality %>
+	<% end %>
 </div>

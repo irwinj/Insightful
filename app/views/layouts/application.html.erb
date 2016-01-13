@@ -1,55 +1,70 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>SocialPersonalityApp</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
+  <head>
+    <title>Insightful</title>
+    <link href='https://fonts.googleapis.com/css?family=Josefin+Slab:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
 
-<body>
 
+
+
+
+  <body>
     <header>
-      <nav class="navbar navbar-default navbar-static-top">
-      <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="/">
+      <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#insightful_nav" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">
             <img alt="Brand" src="...">
-          </a>
-          <ul class="nav navbar-nav app">
-          <li><a href="/">NAME OF APP</a></li>
-          <li><%= link_to "Recent", "/recent" %></li>
-        </div>
+            </a>
+           <!--  <ul class="nav navbar-nav app">
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav navbar-right">
-           <p class="navbar-text">
-            <% if user_signed_in? %>
-              Signed in as <%= link_to current_user.username, current_user %>
-            <% end %>
-          </p>
-        <%= render "devise/shared/links" %>
-          </ul>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
-    </nav>
+            </ul> -->
+          </div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="insightful_nav">
+            <ul class="nav navbar-nav">
+              <li><a href="/">INSIGHTFUL</a></li>
+              <li><%= link_to "Recent", "/recent" %></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+             <li>
+               <p class="navbar-text">
+                <% if user_signed_in? %>
+                Signed in as <%= link_to current_user.username, current_user %>
+                <% end %>
+                </p>
+              </li>
+              <li>
+                <%= render "devise/shared/links" %>
+              </li>
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
+    </header>
+    <div class="container-fluid">
+      <%= yield %>
+    </div>
 
-  </header>
-  <div class="container-fluid">
-    <%= yield %>
-  </div>
+      <%= render "devise/shared/login_modal" %>
 
-<!-- Script for d3 tools -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
-<script src="//d3js.org/d3.v3.min.js"></script>
-</body>
+     <%= render "devise/shared/sign_up_modal" %>
+
+  <!-- Script for d3 tools -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+    <script src="//d3js.org/d3.v3.min.js"></script>
+  </body>
+  
 </html>

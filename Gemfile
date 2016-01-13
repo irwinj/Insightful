@@ -29,6 +29,8 @@ gem 'pry'
 
 gem 'twitter', '~> 5.15'
 
+gem "twitter-bootstrap-rails"
+
 gem 'bootstrap', '~> 4.0.0.alpha3'
 
 gem 'bootstrap_form'
