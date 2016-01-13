@@ -14,18 +14,3 @@
  *= require_self
  *= require devise_bootstrap_views
  */
-
- circle,
- path {
-   cursor: pointer;
- }
-
- circle {
-   fill: none;
-   pointer-events: all;
- }
-
-rect {
-  display: inline-block;
-  background-color: teal;
-}

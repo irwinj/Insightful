@@ -34,6 +34,7 @@ function dThree(){
       trait = {name: d.id, percentage: d.percentage};
       bigFive.push(trait);
     });
+    console.log(bigFive);
 
     var svg = d3.select("#watson_data")
       .append("svg")
