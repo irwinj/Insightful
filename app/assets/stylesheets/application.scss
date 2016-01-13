@@ -14,22 +14,7 @@
  *= require_self
  *= require devise_bootstrap_views
  */
-
- circle,
- path {
-   cursor: pointer;
- }
-
- circle {
-   fill: none;
-   pointer-events: all;
- }
-
-rect {
-  display: inline-block;
-  background-color: teal;
-}
-
+ 
 h1 {
 	color: #1C665F;
 	font-weight: bold;
@@ -44,7 +29,7 @@ h2 {
 .btn {
 	font-size: 16px;
 	font-weight: bold;
-} 
+}
 
 body {
 	font-family: 'Josefin Slab', serif;
@@ -64,7 +49,7 @@ $dropDown       : false;
   font-weight: bold;
   .navbar-brand {
     color: $colDefault;
-    &:hover, &:focus { 
+    &:hover, &:focus {
       color: $colHighlight; }}
   .navbar-text {
     color: $colDefault; }
@@ -118,4 +103,3 @@ $dropDown       : false;
         background-color: $bgHighlight; }}}
 }
 }
-
