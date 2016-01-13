@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   # Example of regular route:
   post 'search' => 'personalities#search'
+  post '/twitter/search' => 'twitter#search'
 
   get 'show' => 'personalities#show'
 
@@ -30,6 +31,7 @@ Rails.application.routes.draw do
 
     resources :personalities
 
+    resources :twitter
 
 
   # Example resource route with options:
