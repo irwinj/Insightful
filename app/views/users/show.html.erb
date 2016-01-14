@@ -5,26 +5,27 @@
       <%= @user.username %></h1>
     </ul>
     <ul>
-      <span class="pre">Email: </span>
-      <%= @user.email %>
+     <h2> <span class="pre">Email: </span>
+      <%= @user.email %></h2>
     </ul>
   </div>
 
   <div class="favorites">
     <h1>My Favorites</h1>
-    <% @user.personalities.each do |personality| %>
-      <%= link_to personality.title, personality %>
-    <% end %>
+      <ul>
+        <% @user.personalities.each do |personality| %>
+        <h2><%= link_to personality.title, personality %></h2>
+        <% end %>
+      </ul>
   </div>
 
   <div class="comments">
-  <h1>My Comments</h1>
-
-     <% @comments.each do |comment| %>
-   
-      <h2>-<%= link_to comment.personality.title, '/personalities/'+comment.personality_id.to_s %></h2>
-   <h3>"<%= comment.body %>"</h3>
-    <% end %>
-
+    <h1>My Comments</h1>
+      <ul>
+        <% @comments.each do |comment| %>
+          <h2>-<%= link_to comment.personality.title, '/personalities/'+comment.personality_id.to_s %></h2>
+          <h3>"<%= comment.body %>"</h3>
+        <% end %>
+      </ul>
   </div>
 </div>
