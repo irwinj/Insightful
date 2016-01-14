@@ -19,12 +19,5 @@
 	  <%= link_to "Sign up", "#sign_up", "data-toggle" => "modal", :class => 'btn btn-small' %>
 	  </li>
 	<% end -%>
-
-	<%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-		<li>
-
-		<%= link_to "Forgot your password?", "#forgot_password", "data-toggle" => "modal", :class => 'btn btn-small' %>
-	  </li>
-	<% end -%>
 <% end -%>
 

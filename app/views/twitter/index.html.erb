@@ -1,6 +1,0 @@
-<h1>twitter#search</h1>
-<%= form_tag("/twitter/search", :method => "POST") do %>
-  <h2><%= label_tag(:q, "Search for:") %></h2>
-  <%= text_area_tag(:q, nil, size: "80x20", maxlength: 50, minlength: 3) %>
-  <%= submit_tag("Search") %>
-<% end %>
