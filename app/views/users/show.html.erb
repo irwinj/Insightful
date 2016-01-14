@@ -1,8 +1,8 @@
 <div class="container">
   <div class="user">
     <ul>
-      <span class="pre">Username: </span> 
-      <%= @user.username %>
+     <h1> <span class="pre">Username: </span> 
+      <%= @user.username %></h1>
     </ul>
     <ul>
       <span class="pre">Email: </span>
@@ -11,14 +11,20 @@
   </div>
 
   <div class="favorites">
-  
+    <h1>My Favorites</h1>
     <% @user.personalities.each do |personality| %>
       <%= link_to personality.title, personality %>
     <% end %>
   </div>
 
   <div class="comments">
-  
+  <h1>My Comments</h1>
+
+     <% @comments.each do |comment| %>
+   
+      <h2>-<%= link_to comment.personality.title, '/personalities/'+comment.personality_id.to_s %></h2>
+   <h3>"<%= comment.body %>"</h3>
+    <% end %>
 
   </div>
 </div>
