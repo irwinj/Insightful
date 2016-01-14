@@ -9,7 +9,7 @@ function dThree(){
   var parameter =  $("#watson_data").attr('params');
 
   $.ajax({
-    url: "/results/" + parameter,
+    url: "/personalities/" + parameter,
     dataType: 'json',
     type: "GET",
     success: function(data) {

@@ -28,7 +28,7 @@ class PersonalitiesController < ApplicationController
       config.access_token_secret = ENV["TWITTER_ACCESS_TOKEN_SECRET"]
     end
 
-    text = client.search(params[:q], result_type: "recent").map(&:text).join("\n")
+    text = client.search(params[:q], result_type: "recent", :count => 400).map(&:text).join("\n")
 
     watson_result(params[:q], text)
   end
