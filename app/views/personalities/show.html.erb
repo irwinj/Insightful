@@ -1,7 +1,19 @@
 <h1>Results</h1>
-<h3><%= @watson.title %></h3>
+<h3><%= @personality.title %></h3>
 <div id="personality"></div>
 <div id="watson_data" params="<%= @params_id %>"></div>
+
+<%= bootstrap_form_for [@personality, @comment] do |c| %>
+  <%= c.text_field :body %>
+  <%= c.primary %>
+<% end %>
+
+<% @comments.each do |comment| %>
+<div class="well">
+  <h1>&quot;<%= comment.body %>&quot;</h1>
+  <h1>-<%= link_to comment.user.username, user_path(comment.user) %></h1>
+</div>
+<% end %>
 
 <script>
   $(document).ready(function(){

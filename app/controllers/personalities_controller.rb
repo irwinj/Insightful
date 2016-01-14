@@ -1,5 +1,6 @@
 class PersonalitiesController < ApplicationController
   def create
+    
   end
 
   def index
@@ -11,11 +12,15 @@ class PersonalitiesController < ApplicationController
 
   def show
     @params_id = params[:id]
-    @watson = Personality.find(params[:id])
+    @personality = Personality.find(params[:id])
+
+    @comment = Comment.new 
+    @comments = Comment.where(personality: @personality)
+
     respond_to do |format|
       format.html
-      if @watson
-        format.json {render json: @watson}
+      if @personality
+        format.json {render json: @personality}
       end
     end
   end
