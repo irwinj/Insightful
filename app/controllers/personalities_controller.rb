@@ -26,6 +26,7 @@ class PersonalitiesController < ApplicationController
 
     @comment = Comment.new 
     @comments = Comment.where(personality: @personality)
+    # @comments = @personality.comments
 
     respond_to do |format|
       format.html
@@ -36,16 +37,36 @@ class PersonalitiesController < ApplicationController
   end
 
   def twitter_search
+
     client = Twitter::REST::Client.new do |config|
       config.consumer_key        = ENV["TWITTER_CONSUMER_KEY"]
       config.consumer_secret     = ENV["TWITTER_CONSUMER_SECRET"]
       config.access_token        = ENV["TWITTER_ACCESS_TOKEN"]
       config.access_token_secret = ENV["TWITTER_ACCESS_TOKEN_SECRET"]
     end
+  
+    begin
+      text = client.search(params[:q], result_type: "recent", :count => 200).map(&:text).join("\n")
+      # logger.debug(text.length) 
+    rescue StandardError => error
+      return redirect_to :back, alert: "Oops, there was a twitter error: #{error}"
+    else
+      service = WatsonAPIClient::PersonalityInsights.new(:user=>ENV["WATSON_USERNAME"],
+                                                     :password=>ENV["WATSON_PASSWORD"],
+                                                     :verify_ssl=>OpenSSL::SSL::VERIFY_NONE)
 
-    text = client.search(params[:q], result_type: "recent", :count => 400).map(&:text).join("\n")
+      begin 
+        service.profile(
+          'Content-Type'     => "text/plain",
+          'Accept'           => "application/json",
+          'Accept-Language'  => "en",
+          'Content-Language' => "en",
+          'body'             => text)
+      rescue StandardError => error
+        return redirect_to :back, alert: "Oops, there was a Watson error (probably not enough words): #{error}"
+      end
+    end
 
-    watson_result(params[:q], text)
   end
 
   def search
@@ -53,19 +74,6 @@ class PersonalitiesController < ApplicationController
   end
 
   private
-
-  def watson_search(text)
-    service = WatsonAPIClient::PersonalityInsights.new(:user=>ENV["WATSON_USERNAME"],
-                                                         :password=>ENV["WATSON_PASSWORD"],
-                                                         :verify_ssl=>OpenSSL::SSL::VERIFY_NONE)
-    logger.debug(text)
-    service.profile(
-      'Content-Type'     => "text/plain",
-      'Accept'           => "application/json",
-      'Accept-Language'  => "en",
-      'Content-Language' => "en",
-      'body'             => text)
-  end
 
   def watson_result(title, text)
     new_record = Personality.new
