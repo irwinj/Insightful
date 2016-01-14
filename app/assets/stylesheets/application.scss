@@ -23,18 +23,17 @@ h1 {
 h2 {
 	font-weight: light;
 	font-size: 22px;
-
 }
 
-.btn {
-	font-size: 16px;
-	font-weight: bold;
+.form {
+	text-align:center;
 }
 
 body {
 	font-family: 'Josefin Slab', serif;
 	color: #2B9D91;
 	background: rgba(255, 180, 145, .5);
+	padding-top: 70px;
 
 $bgDefault      : #2B9D91;
 $bgHighlight    : #6EEADD;
@@ -43,7 +42,7 @@ $colHighlight   : #FFB491;
 $dropDown       : false;
 .navbar-default {
   background-color: $bgDefault;
-  border-color: $bgHighlight;
+  border-color: $colDefault;
   font-size: 140%;
   text-shadow: 0px -1px 0px #003;
   font-weight: bold;
@@ -57,6 +56,7 @@ $dropDown       : false;
     > li {
       > a {
         color: $colDefault;
+        margin-top: 5px;
         &:hover,  &:focus {
           color: $colHighlight; }}
       @if $dropDown {
@@ -80,6 +80,7 @@ $dropDown       : false;
         background-color: $bgHighlight; }}}
   .navbar-toggle {
     border-color: $bgHighlight;
+    text-align: left !important;
     &:hover, &:focus {
       background-color: $bgHighlight; }
     .icon-bar {
