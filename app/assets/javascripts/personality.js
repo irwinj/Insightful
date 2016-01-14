@@ -42,6 +42,13 @@ function dThree(){
   var w = 325;
   var h = 600;
 
+  var tooltipJson;
+
+  //Grabs data from tooltip.json and puts into tooltipJson for use in tip var html//
+  $.getJSON('../tooltip.json', function(data) {
+    tooltipJson = data;
+  });
+
 //If statement puts the bigFive in order for globalFive, which needs a specific order. Then changes the name of the catergoy to match globaFive naming//
 function bigFiveFunc(){
   var bigFive = [];
@@ -65,13 +72,6 @@ function bigFiveFunc(){
 
   });
   globalFiveFunc(bigFive);
-
-  var tooltipJson;
-
-//Grabs data from tooltip.json and puts into tooltipJson for use in tip var html//
-  $.getJSON('../tooltip.json', function(data) {
-    tooltipJson = data;
-  });
 
 //Creates blueprint for tooltips, and assigns it the proper text//
   var tip = d3.tip()
@@ -105,7 +105,7 @@ function bigFiveFunc(){
     .attr("width", "300px")
     .attr("rx", 3)
     .attr("ry", 3)
-    .attr("x", 10)
+    .attr("x", 3)
     .attr("y", function(d, i) {
       return i * (h / bigFive.length) + 50;
     });
@@ -132,7 +132,7 @@ function bigFiveFunc(){
     .transition()
     .duration(2000)
     .attr("cx", function(d, i) {
-      return (d.percentage + 0.04) * 300;
+      return (d.percentage + 0.04) * 285;
     })
     .attr("fill", function(d) {
         return "hsl(200," + Math.round(255 * d.percentage) + "%,45%)";
@@ -179,10 +179,21 @@ function needsFunc(){
     needs.push(trait);
   });
 
+  //Creates blueprint for tooltips, and assigns it the proper text//
+  var tip = d3.tip()
+  .attr("class", "d3-tip")
+  .offset([-10,0])
+  .html(function(d,i) {
+    return tooltipJson[1][i].tooltip;
+  });
+
   var svg = d3.select("#needs")
     .append("svg")
     .attr("width", w)
     .attr("height", "100%");
+
+//Allows var svg to use tooltips. Currently circle elements show tips//
+  svg.call(tip);
 
 //Creates the lines using rectangles//
   var rectangles = svg.selectAll("rect")
@@ -200,7 +211,7 @@ function needsFunc(){
     .attr("width", "300px")
     .attr("rx", 3)
     .attr("ry", 3)
-    .attr("x", 10)
+    .attr("x", 3)
     .attr("y", function(d, i) {
       return i * (h / 5) + 50;
     });
@@ -217,6 +228,8 @@ function needsFunc(){
     .attr("stroke", "rgb(232, 173, 21)")
     .attr("stroke-width", "3")
     .attr("fill", "white")
+    .on("mouseover", tip.show)
+    .on("mouseout", tip.hide)
     .attr("cy", function(d, i) {
       return i * (h / 5) + 53;
     });
@@ -225,7 +238,7 @@ function needsFunc(){
     .transition()
     .duration(2000)
     .attr("cx", function(d, i) {
-      return (d.percentage + 0.03) * 300;
+      return (d.percentage + 0.03) * 285;
     })
     .attr("fill", function(d) {
         return "hsl(153," + Math.round(255 * d.percentage) + "%,40%)";
@@ -273,10 +286,21 @@ function valuesFunc(){
       values.push(trait);
     });
 
+  //Creates blueprint for tooltips, and assigns it the proper text//
+  var tip = d3.tip()
+  .attr("class", "d3-tip")
+  .offset([-10,0])
+  .html(function(d,i) {
+    return tooltipJson[2][i].tooltip;
+  });
+
   var svg = d3.select("#values")
     .append("svg")
     .attr("width", w)
     .attr("height", "100%");
+
+//Allows var svg to use tooltips. Currently circle elements show tips//
+  svg.call(tip);
 
 //Creates the lines using rectangles//
   var rectangles = svg.selectAll("rect")
@@ -294,7 +318,7 @@ function valuesFunc(){
     .attr("width", "300px")
     .attr("rx", 3)
     .attr("ry", 3)
-    .attr("x", 10)
+    .attr("x", 3)
     .attr("y", function(d, i) {
       return i * (h / 5) + 50;
     });
@@ -311,6 +335,8 @@ function valuesFunc(){
     .attr("stroke", "rgb(232, 173, 21)")
     .attr("stroke-width", "3")
     .attr("fill", "white")
+    .on("mouseover", tip.show)
+    .on("mouseout", tip.hide)
     .attr("cy", function(d, i) {
       return i * (h / 5) + 53;
     });
@@ -319,7 +345,7 @@ function valuesFunc(){
     .transition()
     .duration(2000)
     .attr("cx", function(d, i) {
-      return (d.percentage + 0.03)  * 300;
+      return (d.percentage + 0.03)  * 285;
     })
     .attr("fill", function(d) {
         return "hsl(55," + Math.round(255 * d.percentage) + "%,45%)";
