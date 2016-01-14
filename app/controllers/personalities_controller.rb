@@ -1,5 +1,6 @@
 class PersonalitiesController < ApplicationController
   def create
+    
   end
 
   def index
@@ -11,11 +12,15 @@ class PersonalitiesController < ApplicationController
 
   def show
     @params_id = params[:id]
-    @watson = Personality.find(params[:id])
+    @personality = Personality.find(params[:id])
+
+    @comment = Comment.new 
+    @comments = Comment.where(personality: @personality)
+
     respond_to do |format|
       format.html
-      if @watson
-        format.json {render json: @watson}
+      if @personality
+        format.json {render json: @personality}
       end
     end
   end
@@ -28,7 +33,7 @@ class PersonalitiesController < ApplicationController
       config.access_token_secret = ENV["TWITTER_ACCESS_TOKEN_SECRET"]
     end
 
-    text = client.search(params[:q], result_type: "recent").map(&:text).join("\n")
+    text = client.search(params[:q], result_type: "recent", :count => 400).map(&:text).join("\n")
 
     watson_result(params[:q], text)
   end
