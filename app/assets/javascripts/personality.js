@@ -2,8 +2,6 @@
 //d3.select() will reference the first DOM element that matches the CSS selector. To grab multiple DOM elements with the same CSS selector, use selectALL()//
 //d3 generated elements wil stack in order of creation. With the first created item being on top.//
 
-var bigFive = [];
-
 function dThree(){
   var watson_json = [];
   var parameter =  $("#watson_data").attr('params');
@@ -24,250 +22,298 @@ function dThree(){
   });
 
 //svg element parameters//
-  var w = 900;
-  var h = 200;
+  var w = 300;
+  var h = 500;
 
-//If statement puts the bigFive in order for globalFive, which needs a specific order//
-  function bigFiveFunc(){
-    watson_json.tree.children[0].children[0].children.forEach(function(d) {
-      if (d.id == "Openness") {
-        trait = {name: "Intellect", percentage: d.percentage};
-        bigFive[4] = trait;
-      } else if (d.id == "Conscientiousness") {
-        trait = {name: "Orderliness", percentage: d.percentage};
-        bigFive[2] = trait;
-      } else if (d.id == "Extraversion") {
-        trait = {name: d.id, percentage: d.percentage};
-        bigFive[0] = trait;
-      } else if (d.id == "Agreeableness") {
-        trait = {name: "Accommodation", percentage: d.percentage};
-        bigFive[3] = trait;
-      } else if (d.id == "Neuroticism") {
-        trait = {name: "Emotional Stability", percentage: d.percentage};
-        bigFive[1] = trait;
-      }
-
-    });
-    globalFiveFunc();
-    console.log(bigFive);
-
-    var svg = d3.select("#watson_data")
-      .append("svg")
-      .attr("width", w)
-      .attr("height", h);
-
-    var rectangles = svg.selectAll("rect")
-      .data(bigFive)
-      .enter()
-      .append("rect");
-
-      rectangles
-        .text(function(d){
-          return d.percentage;
-        });
-
-      rectangles
-      .attr("height", function(d, i) {
-        return d.percentage * 125;
-      })
-      .attr("width", 0)
-      .attr("x", function(d, i) {
-        return (w / 2);
-      })
-      .attr("y", function(d, i) {
-        return h - (d.percentage * 125);
-      });
-
-      rectangles
-      .transition()
-      .duration(2000)
-      .attr("x", function(d , i) {
-        return (i * (w / bigFive.length));
-      })
-      .attr("width", function(d, i ) {
-          return (w / bigFive.length - 3);
-      })
-      .attr("fill", function(d) {
-          return "rgb(" + Math.round(255 * d.percentage) + ",0,0)";
-        });
-
-    var titles = svg.selectAll("text")
-      .data(bigFive)
-      .enter()
-      .append("text")
-      .text(function(d) {
-        return d.name + " " + (d.percentage * 100) .toFixed(1) + "%";
-      })
-    .attr("fill", "rgb(255, 255, 255)")
-    .attr("fill-opacity", "0.0");
-
-      titles
-      .transition()
-      .duration(3000)
-      .attr("x", function(d, i) {
-        return i * (w / bigFive.length) + (w / bigFive.length - 3) / 2;
-      })
-      .attr("y", function(d, i) {
-        return h - (d.percentage * 125) - 5;
-      })
-      .attr("font-size", "12px")
-      .attr("font-family", "sans-serif")
-      .attr("fill", "rgb(0, 0, 0)")
-      .attr("fill-opacity", "1.0")
-      .attr("text-anchor", "middle");
-  }
-
-  //Needs//
-  var needs = [];
-  function needsFunc(){
-    watson_json.tree.children[1].children[0].children.forEach(function(d) {
+//If statement puts the bigFive in order for globalFive, which needs a specific order. Then changes the name of the catergoy to match globaFive naming//
+function bigFiveFunc(){
+  var bigFive = [];
+  watson_json.tree.children[0].children[0].children.forEach(function(d) {
+    if (d.id == "Openness") {
+      trait = {name: "Intellect", percentage: d.percentage};
+      bigFive[4] = trait;
+    } else if (d.id == "Conscientiousness") {
+      trait = {name: "Orderliness", percentage: d.percentage};
+      bigFive[2] = trait;
+    } else if (d.id == "Extraversion") {
       trait = {name: d.id, percentage: d.percentage};
-      needs.push(trait);
+      bigFive[0] = trait;
+    } else if (d.id == "Agreeableness") {
+      trait = {name: "Accommodation", percentage: d.percentage};
+      bigFive[3] = trait;
+    } else if (d.id == "Neuroticism") {
+      trait = {name: "Emotional Stability", percentage: d.percentage};
+      bigFive[1] = trait;
+    }
+
+  });
+  globalFiveFunc(bigFive);
+
+  var svg = d3.select("#watson_data")
+    .append("svg")
+    .attr("width", w)
+    .attr("height", h);
+
+//Creates the lines using rectangles//
+  var rectangles = svg.selectAll("rect")
+    .data(bigFive)
+    .enter()
+    .append("rect");
+
+  rectangles
+    .text(function(d){
+      return d.percentage;
     });
 
-    var svg = d3.select("#watson_data")
-      .append("svg")
-      .attr("width", w)
-      .attr("height", h);
+  rectangles
+    .attr("height", "5px")
+    .attr("width", "300px")
+    .attr("y", function(d, i) {
+      return i * (h / bigFive.length) + 50;
+    });
 
-    var rectangles = svg.selectAll("rect")
-      .data(needs)
-      .enter()
-      .append("rect");
+//Creates one circle per line//
+  var circles = svg.selectAll("circle")
+    .data(bigFive)
+    .enter()
+    .append("circle")
+    .attr("cx", "12");
 
-      rectangles
-        .text(function(d) {
-          return d.percentage;
-        });
+  circles
+    .attr("r", "10")
+    .attr("stroke", "blue")
+    .attr("stroke-width", "3")
+    .attr("fill", "yellow")
+    .attr("cy", function(d, i) {
+      return i * (h / bigFive.length) + 53;
+    });
 
-      rectangles
-      .attr("height", function(d, i) {
-        return d.percentage * 125;
-      })
-      .attr("width", 0)
-      .attr("x", function(d, i) {
-        return (w / 2);
-      })
-      .attr("y", function(d, i) {
-        return h - (d.percentage * 125);
+  circles
+    .transition()
+    .duration(2000)
+    .attr("cx", function(d, i) {
+      return d.percentage  * 300;
+    })
+    .attr("fill", function(d) {
+        return "rgb(" + Math.round(255 * d.percentage) + ",0,0)";
       });
 
-      rectangles
-      .transition()
-      .duration(2000)
-      .attr("x", function(d , i) {
-        return (i * (w / needs.length));
-      })
-      .attr("width", function(d, i ) {
-          return (w / needs.length - 3);
-      })
-      .attr("fill", function(d) {
-          return "rgb(0,0," + Math.round(255 * d.percentage) + ")";
-        });
-
-    var titles = svg.selectAll("text")
-      .data(needs)
-      .enter()
-      .append("text")
-      .text(function(d) {
-        return d.name + " " + (d.percentage * 100).toFixed(1) + "%";
-      })
+//Puts titles on the circles. If over 50% text-anchor at end, less than text-anchor at start//
+  var titles = svg.selectAll("text")
+    .data(bigFive)
+    .enter()
+    .append("text")
+    .text(function(d) {
+      return d.name + " " + (d.percentage * 100) .toFixed(1) + "%";
+    })
     .attr("fill", "rgb(255, 255, 255)")
     .attr("fill-opacity", "0.0");
 
-      titles
-      .transition()
-      .duration(3000)
-      .attr("x", function(d, i) {
-        return i * (w / needs.length) + (w / needs.length - 3) / 2;
-      })
-      .attr("y", function(d, i) {
-        return h - (d.percentage * 125) - 5;
-      })
-      .attr("font-size", "9px")
-      .attr("font-family", "sans-serif")
-      .attr("fill", "rgb(0, 0, 0)")
-      .attr("fill-opacity", "1.0")
-      .attr("text-anchor", "middle");
-  }
+  titles
+    .transition()
+    .duration(3000)
+    .attr("x", function(d, i) {
+      return d.percentage * 300;
+    })
+    .attr("y", function(d, i) {
+      return i * (h / bigFive.length) + 30;
+    })
+    .attr("font-size", "12px")
+    .attr("font-family", "Josefin Slab")
+    .attr("fill", "rgb(0, 0, 0)")
+    .attr("fill-opacity", "1.0")
+    .attr("text-anchor", function(d, i) {
+      if ((d.percentage * 100) >= 50 ) {
+        return "end";
+      } else {
+        return "start";
+      }
+    });
+}
 
-  //Values//
+//Needs//
+function needsFunc(){
+  var needs = [];
+  watson_json.tree.children[1].children[0].children.forEach(function(d) {
+    trait = {name: d.id, percentage: d.percentage};
+    needs.push(trait);
+  });
+
+  var svg = d3.select("#watson_data")
+    .append("svg")
+    .attr("width", w)
+    .attr("height", h);
+
+//Creates the lines using rectangles//
+  var rectangles = svg.selectAll("rect")
+    .data(needs)
+    .enter()
+    .append("rect");
+
+  rectangles
+    .text(function(d){
+      return d.percentage;
+    });
+
+  rectangles
+    .attr("height", "5px")
+    .attr("width", "300px")
+    .attr("y", function(d, i) {
+      return i * (h / 5) + 50;
+    });
+
+//Creates one circle per line//
+  var circles = svg.selectAll("circle")
+    .data(needs)
+    .enter()
+    .append("circle")
+    .attr("cx", "12");
+
+  circles
+    .attr("r", "10")
+    .attr("stroke", "blue")
+    .attr("stroke-width", "3")
+    .attr("fill", "yellow")
+    .attr("cy", function(d, i) {
+      return i * (h / 5) + 53;
+    });
+
+  circles
+    .transition()
+    .duration(2000)
+    .attr("cx", function(d, i) {
+      return d.percentage  * 288;
+    })
+    .attr("fill", function(d) {
+        return "rgb(" + Math.round(255 * d.percentage) + ",0,0)";
+      });
+
+//Puts titles on the circles. If over 50% text-anchor at end, less than text-anchor at start//
+  var titles = svg.selectAll("text")
+    .data(needs)
+    .enter()
+    .append("text")
+    .text(function(d) {
+      return d.name + " " + (d.percentage * 100) .toFixed(1) + "%";
+    })
+  .attr("fill", "rgb(255, 255, 255)")
+  .attr("fill-opacity", "0.0");
+
+  titles
+    .transition()
+    .duration(3000)
+    .attr("x", function(d, i) {
+      return d.percentage * 300;
+    })
+    .attr("y", function(d, i) {
+      return i * (h / 5) + 30;
+    })
+    .attr("font-size", "12px")
+    .attr("font-family", "Josefin Slab")
+    .attr("fill", "rgb(0, 0, 0)")
+    .attr("fill-opacity", "1.0")
+    .attr("text-anchor", function(d, i) {
+      if ((d.percentage * 100) >= 50 ) {
+        return "end";
+      } else {
+        return "start";
+      }
+    });
+}
+
+//Values//
+function valuesFunc(){
   var values = [];
-  function valuesFunc(){
   watson_json.tree.children[2].children[0].children.forEach(function(d) {
       trait = {name: d.id, percentage: d.percentage};
       values.push(trait);
     });
 
-    var svg = d3.select("#watson_data")
-      .append("svg")
-      .attr("width", w)
-      .attr("height", h);
+  var svg = d3.select("#watson_data")
+    .append("svg")
+    .attr("width", w)
+    .attr("height", h);
 
-    var rectangles = svg.selectAll("rect")
-      .data(values)
-      .enter()
-      .append("rect");
+//Creates the lines using rectangles//
+  var rectangles = svg.selectAll("rect")
+    .data(values)
+    .enter()
+    .append("rect");
 
-      rectangles
-        .text(function(d) {
-          return d.percentage;
-        });
+  rectangles
+    .text(function(d){
+      return d.percentage;
+    });
 
-      rectangles
-      .attr("height", function(d, i) {
-        return d.percentage * 125;
-      })
-      .attr("width", 0)
-      .attr("x", function(d, i) {
-        return (w / 2);
-      })
-      .attr("y", function(d, i) {
-        return h - (d.percentage * 125);
+  rectangles
+    .attr("height", "5px")
+    .attr("width", "300px")
+    .attr("y", function(d, i) {
+      return i * (h / 5) + 50;
+    });
+
+//Creates one circle per line//
+  var circles = svg.selectAll("circle")
+    .data(values)
+    .enter()
+    .append("circle")
+    .attr("cx", "12");
+
+  circles
+    .attr("r", "10")
+    .attr("stroke", "blue")
+    .attr("stroke-width", "3")
+    .attr("fill", "yellow")
+    .attr("cy", function(d, i) {
+      return i * (h / 5) + 53;
+    });
+
+  circles
+    .transition()
+    .duration(2000)
+    .attr("cx", function(d, i) {
+      return d.percentage  * 288;
+    })
+    .attr("fill", function(d) {
+        return "rgb(" + Math.round(255 * d.percentage) + ",0,0)";
       });
 
-      rectangles
-      .transition()
-      .duration(2000)
-      .attr("x", function(d , i) {
-        return (i * (w / values.length));
-      })
-      .attr("width", function(d, i ) {
-          return (w / values.length - 3);
-      })
-      .attr("fill", function(d) {
-          return "rgb(0," + Math.round(255 * d.percentage) + ",0)";
-        });
+//Puts titles on the circles. If over 50% text-anchor at end, less than text-anchor at start//
+  var titles = svg.selectAll("text")
+    .data(values)
+    .enter()
+    .append("text")
+    .text(function(d) {
+      return d.name + " " + (d.percentage * 100) .toFixed(1) + "%";
+    })
+  .attr("fill", "rgb(255, 255, 255)")
+  .attr("fill-opacity", "0.0");
 
-    var titles = svg.selectAll("text")
-      .data(values)
-      .enter()
-      .append("text")
-      .text(function(d) {
-        return d.name + " " + (d.percentage * 100).toFixed(1) + "%";
-      })
-    .attr("fill", "rgb(255, 255, 255)")
-    .attr("fill-opacity", "0.0");
-
-      titles
-      .transition()
-      .duration(3000)
-      .attr("x", function(d, i) {
-        return i * (w / values.length) + (w / values.length - 3) / 2;
-      })
-      .attr("y", function(d, i) {
-        return h - (d.percentage * 125) - 5;
-      })
-      .attr("font-size", "9px")
-      .attr("font-family", "sans-serif")
-      .attr("fill", "rgb(0, 0, 0)")
-      .attr("fill-opacity", "1.0")
-      .attr("text-anchor", "middle");
+  titles
+    .transition()
+    .duration(3000)
+    .attr("x", function(d, i) {
+      return d.percentage * 300;
+    })
+    .attr("y", function(d, i) {
+      return i * (h / 5) + 30;
+    })
+    .attr("font-size", "12px")
+    .attr("font-family", "Josefin Slab")
+    .attr("fill", "rgb(0, 0, 0)")
+    .attr("fill-opacity", "1.0")
+    .attr("text-anchor", function(d, i) {
+      if ((d.percentage * 100) >= 50 ) {
+        return "end";
+      } else {
+        return "start";
+      }
+    });
   }
 }
 
 //Create a string from bigFive, that matches global 5 personality types//
-function globalFiveFunc(){
+function globalFiveFunc(bigFive){
   var globalFive;
   var globalFiveArr = [];
   bigFive.forEach(function(d){
@@ -294,7 +340,6 @@ function globalFiveFunc(){
     }
   });
   globalFive = globalFiveArr.join('');
-  console.log(globalFive);
   findGlobalFive(globalFive);
 }
 
@@ -339,7 +384,7 @@ function findGlobalFive(mbti){
   mbtiFunc(myersBriggs);
 }
 
-//Displays a summary of personality type//
+//Displays the summary of a personality type from mtbi.json//
 function mbtiFunc(mbti) {
   $.getJSON('../mbti.json', function(data) {
     data.forEach(function(d) {
