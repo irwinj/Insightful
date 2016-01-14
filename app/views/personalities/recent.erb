@@ -1,9 +1,0 @@
-<h1>Recent Searches</h1>
-<ul>
-  <% @recent.each do |item| %>
-    <li>
-      <a href="/results/<%= item.id %>"><h3><%= item.title %></h3></a>
-      <h4><%= item.input[0..300] %></h4>
-    </li>
-  <% end %>
-</ul>

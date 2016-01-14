@@ -1,15 +1,5 @@
 class PersonalitiesController < ApplicationController
-  # before_action :authenticate_user!
   def create
-  end
-
-  def update
-  end
-
-  def edit
-  end
-
-  def destroy
   end
 
   def index
@@ -19,7 +9,7 @@ class PersonalitiesController < ApplicationController
     @recent = Personality.last(25).reverse
   end
 
-  def results
+  def show
     @params_id = params[:id]
     @watson = Personality.find(params[:id])
     respond_to do |format|
@@ -30,11 +20,7 @@ class PersonalitiesController < ApplicationController
     end
   end
 
-  def show
-  end
-
   def twitter_search
-
     client = Twitter::REST::Client.new do |config|
       config.consumer_key        = ENV["TWITTER_CONSUMER_KEY"]
       config.consumer_secret     = ENV["TWITTER_CONSUMER_SECRET"]
@@ -45,7 +31,6 @@ class PersonalitiesController < ApplicationController
     text = client.search(params[:q], result_type: "recent").map(&:text).join("\n")
 
     watson_result(params[:q], text)
-
   end
 
   def search
@@ -73,11 +58,6 @@ class PersonalitiesController < ApplicationController
     new_record.input = text
     new_record.title = title
     new_record.save
-
-    @last_record = Personality.last
-    @params_id = @last_record.id
-    @watson = @last_record
-    render "personalities/results"
+    redirect_to new_record
   end
-
 end

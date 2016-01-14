@@ -1,6 +1,10 @@
-<<<<<<< HEAD
-<h1>Personality#Show</h1>
-=======
-<h1>Personality#show</h1>
-<div id="bigFive"></div>
->>>>>>> bd5b5dd0c83a50e1aaaa08591e341ca758339f55
+<h1>Results</h1>
+<h3><%= @watson.title %></h3>
+<div id="personality"></div>
+<div id="watson_data" params="<%= @params_id %>"></div>
+
+<script>
+  $(document).ready(function(){
+   dThree()
+  });
+</script>

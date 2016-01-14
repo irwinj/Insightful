@@ -1,15 +1,24 @@
-<div class="user">
-	<ul>
-		Username: <%= @user.username %>
-	</ul>
-	<ul>
-		Email: <%= @user.email %>
-	</ul>
-</div>
+<div class="container">
+  <div class="user">
+    <ul>
+      <span class="pre">Username: </span> 
+      <%= @user.username %>
+    </ul>
+    <ul>
+      <span class="pre">Email: </span>
+      <%= @user.email %>
+    </ul>
+  </div>
 
-<div>
-	
-	<% @user.personalities.each do |personality| %>
-	<%= link_to personality.title, personality %>
-	<% end %>
+  <div class="favorites">
+  
+    <% @user.personalities.each do |personality| %>
+      <%= link_to personality.title, personality %>
+    <% end %>
+  </div>
+
+  <div class="comments">
+  
+
+  </div>
 </div>

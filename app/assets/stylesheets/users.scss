@@ -1,7 +1,23 @@
 .user {
-	font-size: 16px;
+	font-size: 18px;
+	width: 45%;
+    margin: 1em;
+    display: inline-block;
+     clear: right;
 }
 
-body { 
-	  padding-top: 70px; 
-	  }
+.container {
+	display: inline-block;
+
+}
+.favorites {
+	text-align: right;
+	width: 300px;
+    margin: 1em;
+    display: inline-block;
+}
+.pre {
+	font-weight: bold;
+}
+
+

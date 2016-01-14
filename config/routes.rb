@@ -8,17 +8,9 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'personalities#index'
 
-
-
   # Example of regular route:
   post 'search' => 'personalities#search'
   post 'twitter/search' => 'personalities#twitter_search'
-
-  get 'show' => 'personalities#show'
-
-  get 'show/:id' => 'personalities#show'
-
-  get "/results/:id" => 'personalities#results', as: 'results'
 
   get "/recent" => 'personalities#recent'
 
@@ -26,13 +18,8 @@ Rails.application.routes.draw do
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
-    resources :users
-
-
-    resources :personalities
-
-    resources :twitter
-
+  resources :users
+  resources :personalities
 
   # Example resource route with options:
   #   resources :products do
