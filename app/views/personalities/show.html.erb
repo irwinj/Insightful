@@ -2,6 +2,13 @@
 <h3><%= @watson.title %></h3>
 <div id="personality"></div>
 <div id="watson_data" params="<%= @params_id %>"></div>
+
+<%= bootstrap_form_for [@watson, @comment] do |c| %>
+  <%= c.text_field :body %>
+
+  <%= c.primary %>
+<% end %>
+
 <% @comments.each do |comment| %>
 <div class="well">
   <h1>&quot;<%= comment["body"] %>&quot;</h1>

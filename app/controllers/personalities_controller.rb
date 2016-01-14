@@ -13,6 +13,7 @@ class PersonalitiesController < ApplicationController
   def show
     @params_id = params[:id]
     @watson = Personality.find(params[:id])
+    @comment = Comment.new 
     @comments = []
     db_query = Comment.joins(:user).where(personality_id: params[:id].to_i).find_each do |comment|
         @comments.push({'body' => comment.body, 'username' => comment.user[:username]})
