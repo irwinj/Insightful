@@ -1,10 +1,13 @@
 <h1>Results</h1>
 <h3><%= @watson.title %></h3>
+
+<%= render "/shared/favorite_button" %>
+
 <div id="personality"></div>
 <div id="watson_data" params="<%= @params_id %>"></div>
 
 <script>
   $(document).ready(function(){
-   dThree()
+    dThree()
   });
 </script>

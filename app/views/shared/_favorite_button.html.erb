@@ -1,0 +1,14 @@
+<% if user_signed_in? %>
+  <div class="favorite_button <%= "favorited" if is_favorite? @watson %> ">
+  <%= link_to('Favorite', "/personalities/#{@watson.id}/toggle_favorite", :method => :post, :remote => true, :class => "favorite") %>
+  <%= link_to('Unfavorite', "/personalities/#{@watson.id}/toggle_favorite", :method => :post, :remote => true, :class => "unfavorite") %>
+  </div>
+<% end %>
+
+<script type="text/javascript">
+  $('.favorite_button a').on("ajax:success", function(e) {
+    $(e.target)
+      .parent(".favorite_button")
+      .toggleClass("favorited")
+  });
+</script>

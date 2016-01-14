@@ -5,3 +5,15 @@
 .clear {
 	font-weight: bold;
 }
+
+.favorited .favorite {
+  display: none;
+}
+
+.favorited .unfavorite {
+  display: inline;
+}
+
+.unfavorite {
+  display: none;
+}
