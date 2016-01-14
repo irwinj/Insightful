@@ -66,10 +66,28 @@ function bigFiveFunc(){
   });
   globalFiveFunc(bigFive);
 
+  var tooltipJson;
+
+//Grabs data from tooltip.json and puts into tooltipJson for use in tip var html//
+  $.getJSON('../tooltip.json', function(data) {
+    tooltipJson = data;
+  });
+
+//Creates blueprint for tooltips, and assigns it the proper text//
+  var tip = d3.tip()
+  .attr("class", "d3-tip")
+  .offset([-10,0])
+  .html(function(d,i) {
+    return tooltipJson[0][i].tooltip;
+  });
+
   var svg = d3.select("#bigFive")
     .append("svg")
     .attr("width", w)
     .attr("height", "100%");
+
+//Allows var svg to use tooltips. Currently circle elements show tips//
+  svg.call(tip);
 
 //Creates the lines using rectangles//
   var rectangles = svg.selectAll("rect")
@@ -104,6 +122,8 @@ function bigFiveFunc(){
     .attr("stroke", "rgb(232, 173, 21)")
     .attr("stroke-width", "3")
     .attr("fill", "white")
+    .on("mouseover", tip.show)
+    .on("mouseout", tip.hide)
     .attr("cy", function(d, i) {
       return i * (h / bigFive.length) + 53;
     });
@@ -148,6 +168,7 @@ function bigFiveFunc(){
         return "start";
       }
     });
+
 }
 
 //Needs//

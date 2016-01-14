@@ -1,6 +1,16 @@
 class PersonalitiesController < ApplicationController
-  def create
-    
+
+  def toggle_favorite
+    personality_id = params[:id].to_i
+    personality = Personality.find(personality_id)
+
+    if current_user.personality_ids.include? personality_id
+      current_user.personalities.delete personality
+    else
+      current_user.personalities << personality
+    end
+
+    render :json => { :status => "ok" }
   end
 
   def index
