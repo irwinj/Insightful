@@ -35,7 +35,7 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="insightful_nav">
             <ul class="nav navbar-nav">
-              <li><a href="/" style="color: #FFB491">Insightful</a></li>
+              <li><%= link_to "Search", "/" %></li>
               <li><%= link_to "Recent", "/recent" %></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -63,8 +63,6 @@
     <%= render "devise/shared/login_modal" %>
 
     <%= render "devise/shared/sign_up_modal" %>
-
-    <%= render "devise/shared/password_modal" %>
 
   <!-- Script for d3 tools -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
