@@ -1,16 +1,56 @@
 // Place all the styles related to the personality controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#needs {
+	position: relative;
+
+}
+
+#personality p {
+	font-size: 11px;
+}
+
+#watson_data {
+	display: flex;
+	justify-content: space-around;
+}
+
+.brand {
+	height: 27px;
+	margin-right: 10px;
+	display: inline-block;
+}
+
+.brand span {
+	color: rgb(255, 255, 255);
+}
+
+.showMore {
+	font-size: 12px;
+	margin-left: 280px;
+	position: absolute;
+}
+
+.hideContent {
+	overflow: hidden;
+	height: 650px;
+}
+
+div .showContent {
+	height: 1500px;
+}
 
 .clear {
 	font-weight: bold;
 }
 
 .dThree {
+	vertical-align: top;
 	display: inline-block;
 	border-radius: 15px;
 	background-color: rgb(255, 255, 255);
 	padding: 15px;
-	margin: 10px;
-	height: 800;
+	margin: 6px;
+	height: 650px;
+	width: 350px;
 }
