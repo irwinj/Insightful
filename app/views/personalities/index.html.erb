@@ -1,9 +1,9 @@
 <h1>Insightful</h1>
 <%= form_tag("/search", :method => "POST") do %>
   <h2><%= label_tag(:title, "Search Title") %></h2>
-  <p><%= text_field_tag(:title) %></p>
+  <p><%= text_field_tag(:title, nil, maxlength: 50, minlength: 3 ) %></p>
   <h2><%= label_tag(:q, "Search for:") %></h2>
-  <%= text_area_tag(:q, nil, cols: 80, rows: 20 ) %>
+  <%= text_area_tag(:q, nil, size: "80x20", maxlength: 25000, minlength: 1000 ) %>
   <div class="btn">
   <%= submit_tag("Search") %>
   </div>
