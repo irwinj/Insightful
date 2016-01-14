@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   post 'twitter/search' => 'personalities#twitter_search'
 
   get "/recent" => 'personalities#recent'
+  post 'personalities/:id/toggle_favorite' => 'personalities#toggle_favorite'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
