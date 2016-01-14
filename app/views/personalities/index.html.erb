@@ -2,9 +2,9 @@
   <div class="watson">
     <%= form_tag("/search", :method => "POST", :class => 'form') do %>
         <h2><%= label_tag(:title, "Search Title") %></h2>
-        <p><%= text_field_tag(:title, nil, maxlength: 50, minlength: 3 ) %></p>
+        <p><%= text_field_tag(:title, nil, :required => true, maxlength: 50, minlength: 3 ) %></p>
         <h2><%= label_tag(:q, "Search for:") %></h2>
-        <%= text_area_tag(:q, nil, size: "80x20", maxlength: 25000, minlength: 1000 ) %>
+        <%= text_area_tag(:q, nil, :required => true, size: "80x20", maxlength: 25000, minlength: 1000 ) %>
       <div class="clear">
         <%= submit_tag("Search") %>
       <% end %>
@@ -12,7 +12,7 @@
   <div class="twitter">
     <%= form_tag("/twitter/search", :method => "POST") do %>
         <h2><%= label_tag(:q, "Search for:") %></h2>
-        <%= text_area_tag(:q, nil, size: "80x20", maxlength: 50, minlength: 3) %>
+        <%= text_area_tag(:q, nil, :required => true, size: "80x20", maxlength: 50, minlength: 3) %>
         <%= submit_tag("Search") %>
     <% end %>
   </div>
