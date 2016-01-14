@@ -38,11 +38,12 @@
   <div class="col-md-3">
   </div><!-- end of col -->
   <div class="col-md-6">
-    <%= bootstrap_form_for [@personality, @comment] do |c| %>
-      <%= c.text_field(:body, :required => true, maxlength: 5000, minlength: 3) %>
-      <%= c.primary %>
+    <% if user_signed_in? %>
+      <%= bootstrap_form_for [@personality, @comment] do |c| %>
+        <%= c.text_field(:body, :required => true, maxlength: 5000, minlength: 3) %>
+        <%= c.primary %>
+      <% end %>
     <% end %>
-
     <% @comments.each do |comment| %>
     <div class="well">
       <h1>&quot;<%= comment.body %>&quot;</h1>
