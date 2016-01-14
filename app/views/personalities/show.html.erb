@@ -1,3 +1,6 @@
+<style>
+
+</style>
 <h1>Results</h1>
 
 <h3><%= @personality.title %></h3>
@@ -6,6 +9,15 @@
 
 <div id="personality"></div>
 <div id="watson_data" params="<%= @params_id %>"></div>
+<div id="bigFive" class="dThree">
+  <h4>Big Five</h4>
+</div>
+<div id="needs" class="dThree">
+  <h4>Needs</h4>
+</div>
+<div id="values" class="dThree">
+  <h4>Values</h4>
+</div>
 
 <%= bootstrap_form_for [@personality, @comment] do |c| %>
   <%= c.text_field :body %>
