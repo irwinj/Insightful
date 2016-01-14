@@ -2,7 +2,12 @@
 <h3><%= @watson.title %></h3>
 <div id="personality"></div>
 <div id="watson_data" params="<%= @params_id %>"></div>
-
+<% @comments.each do |comment| %>
+<div class="well">
+  <h1>&quot;<%= comment["body"] %>&quot;</h1>
+  <h1>-<%= comment["username"] %></h1>
+</div>
+<% end %>
 <script>
   $(document).ready(function(){
    dThree()

@@ -1,5 +1,6 @@
 class PersonalitiesController < ApplicationController
   def create
+    
   end
 
   def index
@@ -12,6 +13,10 @@ class PersonalitiesController < ApplicationController
   def show
     @params_id = params[:id]
     @watson = Personality.find(params[:id])
+    @comments = []
+    db_query = Comment.joins(:user).where(personality_id: params[:id].to_i).find_each do |comment|
+        @comments.push({'body' => comment.body, 'username' => comment.user[:username]})
+    end
     respond_to do |format|
       format.html
       if @watson
