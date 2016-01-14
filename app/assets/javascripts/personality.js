@@ -1,4 +1,21 @@
 //=require d3
+$(document).ready(function(){
+  //Show more conent for needs div//
+  $(".showMore").on("click", function() {
+    var linkText = $(".showMore").text().toUpperCase();
+    console.log(linkText);
+
+    if (linkText == "SHOW MORE") {
+      $(".showMore").text("Show less");
+      $("#needs").switchClass("hideContent", "showContent", 400);
+    } else {
+      $(".showMore").text("Show more");
+      $("#needs").switchClass("showContent", "hideContent", 400);
+    }
+  });
+
+});
+
 //d3.select() will reference the first DOM element that matches the CSS selector. To grab multiple DOM elements with the same CSS selector, use selectALL()//
 //d3 generated elements wil stack in order of creation. With the first created item being on top.//
 
@@ -23,7 +40,7 @@ function dThree(){
 
 //svg element parameters//
   var w = 325;
-  var h = 800;
+  var h = 600;
 
 //If statement puts the bigFive in order for globalFive, which needs a specific order. Then changes the name of the catergoy to match globaFive naming//
 function bigFiveFunc(){
@@ -49,10 +66,28 @@ function bigFiveFunc(){
   });
   globalFiveFunc(bigFive);
 
+  var tooltipJson;
+
+//Grabs data from tooltip.json and puts into tooltipJson for use in tip var html//
+  $.getJSON('../tooltip.json', function(data) {
+    tooltipJson = data;
+  });
+
+//Creates blueprint for tooltips, and assigns it the proper text//
+  var tip = d3.tip()
+  .attr("class", "d3-tip")
+  .offset([-10,0])
+  .html(function(d,i) {
+    return tooltipJson[0][i].tooltip;
+  });
+
   var svg = d3.select("#bigFive")
     .append("svg")
     .attr("width", w)
-    .attr("height", h);
+    .attr("height", "100%");
+
+//Allows var svg to use tooltips. Currently circle elements show tips//
+  svg.call(tip);
 
 //Creates the lines using rectangles//
   var rectangles = svg.selectAll("rect")
@@ -80,13 +115,15 @@ function bigFiveFunc(){
     .data(bigFive)
     .enter()
     .append("circle")
-    .attr("cx", "12");
+    .attr("cx", 12);
 
   circles
     .attr("r", "10")
     .attr("stroke", "rgb(232, 173, 21)")
     .attr("stroke-width", "3")
-    .attr("fill", "yellow")
+    .attr("fill", "white")
+    .on("mouseover", tip.show)
+    .on("mouseout", tip.hide)
     .attr("cy", function(d, i) {
       return i * (h / bigFive.length) + 53;
     });
@@ -121,7 +158,7 @@ function bigFiveFunc(){
       return i * (h / bigFive.length) + 30;
     })
     .attr("font-size", "12px")
-    .attr("font-family", "Josefin Slab")
+    .attr("font-family", "sans-serif")
     .attr("fill", "rgb(0, 0, 0)")
     .attr("fill-opacity", "1.0")
     .attr("text-anchor", function(d, i) {
@@ -131,6 +168,7 @@ function bigFiveFunc(){
         return "start";
       }
     });
+
 }
 
 //Needs//
@@ -144,7 +182,7 @@ function needsFunc(){
   var svg = d3.select("#needs")
     .append("svg")
     .attr("width", w)
-    .attr("height", h);
+    .attr("height", "100%");
 
 //Creates the lines using rectangles//
   var rectangles = svg.selectAll("rect")
@@ -162,7 +200,7 @@ function needsFunc(){
     .attr("width", "300px")
     .attr("rx", 3)
     .attr("ry", 3)
-    .attr("x", 22)
+    .attr("x", 10)
     .attr("y", function(d, i) {
       return i * (h / 5) + 50;
     });
@@ -172,13 +210,13 @@ function needsFunc(){
     .data(needs)
     .enter()
     .append("circle")
-    .attr("cx", 20);
+    .attr("cx", 12);
 
   circles
     .attr("r", "10")
     .attr("stroke", "rgb(232, 173, 21)")
     .attr("stroke-width", "3")
-    .attr("fill", "yellow")
+    .attr("fill", "white")
     .attr("cy", function(d, i) {
       return i * (h / 5) + 53;
     });
@@ -214,7 +252,7 @@ function needsFunc(){
       return i * (h / 5) + 30;
     })
     .attr("font-size", "12px")
-    .attr("font-family", "Josefin Slab")
+    .attr("font-family", "sans-serif")
     .attr("fill", "rgb(0, 0, 0)")
     .attr("fill-opacity", "1.0")
     .attr("text-anchor", function(d, i) {
@@ -224,6 +262,7 @@ function needsFunc(){
         return "start";
       }
     });
+
 }
 
 //Values//
@@ -237,7 +276,7 @@ function valuesFunc(){
   var svg = d3.select("#values")
     .append("svg")
     .attr("width", w)
-    .attr("height", h);
+    .attr("height", "100%");
 
 //Creates the lines using rectangles//
   var rectangles = svg.selectAll("rect")
@@ -271,7 +310,7 @@ function valuesFunc(){
     .attr("r", "10")
     .attr("stroke", "rgb(232, 173, 21)")
     .attr("stroke-width", "3")
-    .attr("fill", "yellow")
+    .attr("fill", "white")
     .attr("cy", function(d, i) {
       return i * (h / 5) + 53;
     });
@@ -307,7 +346,7 @@ function valuesFunc(){
       return i * (h / 5) + 30;
     })
     .attr("font-size", "12px")
-    .attr("font-family", "Josefin Slab")
+    .attr("font-family", "sans-serif")
     .attr("fill", "rgb(0, 0, 0)")
     .attr("fill-opacity", "1.0")
     .attr("text-anchor", function(d, i) {

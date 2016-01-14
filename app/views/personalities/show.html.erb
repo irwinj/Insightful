@@ -1,36 +1,55 @@
-<style>
+<div class="row">
+  <div class="col-md-1">
+  </div><!-- end of col -->
+  <div class="col-md-10">
+    <h1>Personality Portrait</h1>
+    <h3><%= @personality.title %></h3>
 
-</style>
-<h1>Results</h1>
+    <%= render "/shared/favorite_button" %>
 
-<h3><%= @personality.title %></h3>
+    <div id="personality" class="well"></div>
+  </div>
+  <div class="col-md-1">
+  </div><!-- end of col -->
+</div> <!-- end of row -->
+<div class="row">
+  <div class="col-md-12 ">
+    <div id="watson_data" params="<%= @params_id %>">
+      <div id="bigFive" class="dThree">
+        <h4>Personality</h4>
+      </div>
+      <div style="display: inline-block;">
+        <div id="needs" class="dThree hideContent">
+          <h4>Consumer Needs</h4>
+        </div>
+        <div class="showMore">Show more</div>
+      </div>
+      <div id="values" class="dThree">
+        <h4>Values</h4>
+      </div>
+    </div>
+  </div><!-- end of col -->
+</div> <!-- end of row -->
+<div class="row">
+  <div class="col-md-3">
+  </div><!-- end of col -->
+  <div class="col-md-6">
+    <%= bootstrap_form_for [@personality, @comment] do |c| %>
+      <%= c.text_field :body %>
+      <%= c.primary %>
+    <% end %>
 
-<%= render "/shared/favorite_button" %>
-
-<div id="personality"></div>
-<div id="watson_data" params="<%= @params_id %>"></div>
-<div id="bigFive" class="dThree">
-  <h4>Big Five</h4>
-</div>
-<div id="needs" class="dThree">
-  <h4>Needs</h4>
-</div>
-<div id="values" class="dThree">
-  <h4>Values</h4>
-</div>
-
-<%= bootstrap_form_for [@personality, @comment] do |c| %>
-  <%= c.text_field :body %>
-  <%= c.primary %>
+    <% @comments.each do |comment| %>
+    <div class="well">
+      <h1>&quot;<%= comment.body %>&quot;</h1>
+      <h1>-<%= link_to comment.user.username, user_path(comment.user) %></h1>
+    </div>
+  </div><!-- end of col -->
+  <div class="col-md-3">
+  </div><!-- end of col -->
+</div><!-- end of row -->
 <% end %>
-
-<% @comments.each do |comment| %>
-<div class="well">
-  <h1>&quot;<%= comment.body %>&quot;</h1>
-  <h1>-<%= link_to comment.user.username, user_path(comment.user) %></h1>
 </div>
-<% end %>
-
 <script>
   $(document).ready(function(){
     dThree()
