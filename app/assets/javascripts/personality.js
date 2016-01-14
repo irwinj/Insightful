@@ -7,7 +7,7 @@ function dThree(){
   var parameter =  $("#watson_data").attr('params');
 
   $.ajax({
-    url: "/results/" + parameter,
+    url: "/personalities/" + parameter,
     dataType: 'json',
     type: "GET",
     success: function(data) {
@@ -22,8 +22,8 @@ function dThree(){
   });
 
 //svg element parameters//
-  var w = 300;
-  var h = 500;
+  var w = 325;
+  var h = 800;
 
 //If statement puts the bigFive in order for globalFive, which needs a specific order. Then changes the name of the catergoy to match globaFive naming//
 function bigFiveFunc(){
@@ -49,7 +49,7 @@ function bigFiveFunc(){
   });
   globalFiveFunc(bigFive);
 
-  var svg = d3.select("#watson_data")
+  var svg = d3.select("#bigFive")
     .append("svg")
     .attr("width", w)
     .attr("height", h);
@@ -68,6 +68,9 @@ function bigFiveFunc(){
   rectangles
     .attr("height", "5px")
     .attr("width", "300px")
+    .attr("rx", 3)
+    .attr("ry", 3)
+    .attr("x", 10)
     .attr("y", function(d, i) {
       return i * (h / bigFive.length) + 50;
     });
@@ -81,7 +84,7 @@ function bigFiveFunc(){
 
   circles
     .attr("r", "10")
-    .attr("stroke", "blue")
+    .attr("stroke", "rgb(232, 173, 21)")
     .attr("stroke-width", "3")
     .attr("fill", "yellow")
     .attr("cy", function(d, i) {
@@ -92,12 +95,11 @@ function bigFiveFunc(){
     .transition()
     .duration(2000)
     .attr("cx", function(d, i) {
-      return d.percentage  * 300;
+      return (d.percentage + 0.04) * 300;
     })
     .attr("fill", function(d) {
-        return "rgb(" + Math.round(255 * d.percentage) + ",0,0)";
+        return "hsl(200," + Math.round(255 * d.percentage) + "%,45%)";
       });
-
 //Puts titles on the circles. If over 50% text-anchor at end, less than text-anchor at start//
   var titles = svg.selectAll("text")
     .data(bigFive)
@@ -113,7 +115,7 @@ function bigFiveFunc(){
     .transition()
     .duration(3000)
     .attr("x", function(d, i) {
-      return d.percentage * 300;
+      return d.percentage * 310;
     })
     .attr("y", function(d, i) {
       return i * (h / bigFive.length) + 30;
@@ -139,7 +141,7 @@ function needsFunc(){
     needs.push(trait);
   });
 
-  var svg = d3.select("#watson_data")
+  var svg = d3.select("#needs")
     .append("svg")
     .attr("width", w)
     .attr("height", h);
@@ -158,6 +160,9 @@ function needsFunc(){
   rectangles
     .attr("height", "5px")
     .attr("width", "300px")
+    .attr("rx", 3)
+    .attr("ry", 3)
+    .attr("x", 22)
     .attr("y", function(d, i) {
       return i * (h / 5) + 50;
     });
@@ -167,11 +172,11 @@ function needsFunc(){
     .data(needs)
     .enter()
     .append("circle")
-    .attr("cx", "12");
+    .attr("cx", 20);
 
   circles
     .attr("r", "10")
-    .attr("stroke", "blue")
+    .attr("stroke", "rgb(232, 173, 21)")
     .attr("stroke-width", "3")
     .attr("fill", "yellow")
     .attr("cy", function(d, i) {
@@ -182,10 +187,10 @@ function needsFunc(){
     .transition()
     .duration(2000)
     .attr("cx", function(d, i) {
-      return d.percentage  * 288;
+      return (d.percentage + 0.03) * 300;
     })
     .attr("fill", function(d) {
-        return "rgb(" + Math.round(255 * d.percentage) + ",0,0)";
+        return "hsl(153," + Math.round(255 * d.percentage) + "%,40%)";
       });
 
 //Puts titles on the circles. If over 50% text-anchor at end, less than text-anchor at start//
@@ -203,7 +208,7 @@ function needsFunc(){
     .transition()
     .duration(3000)
     .attr("x", function(d, i) {
-      return d.percentage * 300;
+      return d.percentage * 310;
     })
     .attr("y", function(d, i) {
       return i * (h / 5) + 30;
@@ -229,7 +234,7 @@ function valuesFunc(){
       values.push(trait);
     });
 
-  var svg = d3.select("#watson_data")
+  var svg = d3.select("#values")
     .append("svg")
     .attr("width", w)
     .attr("height", h);
@@ -248,6 +253,9 @@ function valuesFunc(){
   rectangles
     .attr("height", "5px")
     .attr("width", "300px")
+    .attr("rx", 3)
+    .attr("ry", 3)
+    .attr("x", 10)
     .attr("y", function(d, i) {
       return i * (h / 5) + 50;
     });
@@ -261,7 +269,7 @@ function valuesFunc(){
 
   circles
     .attr("r", "10")
-    .attr("stroke", "blue")
+    .attr("stroke", "rgb(232, 173, 21)")
     .attr("stroke-width", "3")
     .attr("fill", "yellow")
     .attr("cy", function(d, i) {
@@ -272,10 +280,10 @@ function valuesFunc(){
     .transition()
     .duration(2000)
     .attr("cx", function(d, i) {
-      return d.percentage  * 288;
+      return (d.percentage + 0.03)  * 300;
     })
     .attr("fill", function(d) {
-        return "rgb(" + Math.round(255 * d.percentage) + ",0,0)";
+        return "hsl(55," + Math.round(255 * d.percentage) + "%,45%)";
       });
 
 //Puts titles on the circles. If over 50% text-anchor at end, less than text-anchor at start//
@@ -293,7 +301,7 @@ function valuesFunc(){
     .transition()
     .duration(3000)
     .attr("x", function(d, i) {
-      return d.percentage * 300;
+      return d.percentage * 310;
     })
     .attr("y", function(d, i) {
       return i * (h / 5) + 30;
@@ -393,5 +401,4 @@ function mbtiFunc(mbti) {
       }
     });
   });
-
 }
