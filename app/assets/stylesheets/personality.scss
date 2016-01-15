@@ -180,7 +180,7 @@ div .showContent {
 }
 
 /* Slide 1 */
-// #slide-1 .bcg {background-image:url('../people_bg.jpg')}
+#slide-1 .bcg {background-image:url('../people_bg.jpg')}
 
 .homeSearch {
 	height: 575px;
@@ -190,7 +190,7 @@ div .showContent {
 /* CSS - Slide 2 */
 #slide-2 .bcg {
     background: none;
-    background-color: #2B9D91;;
+    background-color: #010101;
     height:100px;
     text-align: center
 }
@@ -232,5 +232,5 @@ div .showContent {
 }
 
 .teamThumbs {
-	height: 525px;
+	height: 500px;
 }

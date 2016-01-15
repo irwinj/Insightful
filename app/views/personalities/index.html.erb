@@ -18,12 +18,12 @@
         <div class="search_forms well">
           <div class="tab-content">
             <div id="twitter" class="tab-pane fade in active">
-             <%= form_tag("/twitter/search", :method => "POST", :class => 'form') do %>
-                <h2><%= label_tag(:q, "Find out the group personality of those discussing a topic on Twitter") %></h2>
-                <%= text_area_tag(:q, nil, :required => true, size: "20x1", maxlength: 50, minlength: 3, :class => "form-control", :placeholder => "#oprah, @oprah, or oprah is great") %>
-                <div class="clear">
-                  <%= submit_tag("Search", :class => "btn btn-default homeButt")%>
-                <% end %>
+              <%= form_tag("/twitter/search", :method => "POST", :class => 'form') do %>
+                 <h2><%= label_tag(:q, "Find out the group personality of those discussing a topic on Twitter") %></h2>
+                 <%= text_area_tag(:q, nil, :required => true, size: "20x1", maxlength: 50, minlength: 3, :class => "form-control", :placeholder => "#oprah, @oprah, or oprah is great") %>
+                 <div class="clear">
+                   <%= submit_tag("Search", :class => "btn btn-default homeButt")%>
+                 <% end %>
                 </div>
                 </br>
             </div>
@@ -87,7 +87,7 @@
         <ul>
           <% @recent.each do |item| %>
             <li>
-              <h3><%= link_to item.title, item %></h3>
+              <h4><%= link_to item.title, item %></h4>
             </li>
           <% end %>
         </ul>
