@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   root 'personalities#index'
   post 'watson/search' => 'personalities#watson_search'
   post 'twitter/search' => 'personalities#twitter_search'
-  get "/recent" => 'personalities#recent'
+  get "/portraits" => 'personalities#recent'
   post 'personalities/:id/toggle_favorite' => 'personalities#toggle_favorite'
 
   resources :users
