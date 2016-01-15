@@ -52,7 +52,7 @@ class PersonalitiesController < ApplicationController
     end
 
     begin
-      text = client.search(params[:q], result_type: "recent").take(200).map(&:text).join("\n")
+      text = client.search(params[:q], result_type: "recent").take(100).map(&:text).join("\n")
       # logger.debug(text.length)
     rescue StandardError => error
       return redirect_to :back, alert: "Oops, there was a twitter error: #{error}"
