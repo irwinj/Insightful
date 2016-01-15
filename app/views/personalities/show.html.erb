@@ -57,6 +57,26 @@
 </div><!-- end of row -->
 
 </div>
+
+<div id="values" class="dThree">
+  <h4>Values</h4>
+</div>
+
+<% if user_signed_in? %>
+  <%= bootstrap_form_for [@personality, @comment] do |c| %>
+    <%= c.text_field :body %>
+    <%= c.primary %>
+  <% end %>
+<% end %>
+
+
+<% @comments.each do |comment| %>
+<div class="well">
+  <h1>&quot;<%= comment.body %>&quot;</h1>
+  <h1>-<%= link_to comment.user.username, user_path(comment.user) %></h1>
+</div>
+<% end %>
+
 <script>
   $(document).ready(function(){
     dThree()
