@@ -87,11 +87,16 @@ div .showContent {
   margin: 0 auto;
 }
 
+#offPill a {
+	color: #2B9D91
+}
+
 .nav-pills {
   margin: auto;
   width: 10%;
   min-width: 70px;
   font-weight: bold;
+	font-family: 'Montserrat', sans-serif;
 }
 
 .toggle a {
@@ -102,13 +107,22 @@ div .showContent {
 .search_forms {
   border-style: ridge;
   border-color: #9D593A;
-  min-height: 400px;
+  min-height: 470px;
   width: 600px;
   margin: 0 auto;
 }
 
+.other a{
+  color: #2B9D91;
+  font-size: 100%;
+}
+
 .active a{
   background-color: #9D593A !important;
+  color: rgb(255, 255, 255) !important;
+  font-size: 100%;
+	font-family: 'Montserrat', sans-serif;
+	text-shadow: 0px 0px 0.5px #000000;
 }
 
 #twitter{
@@ -130,4 +144,94 @@ div .showContent {
 
 .unfavorite {
   display: none;
+}
+
+.homeButt {
+	margin-top: 10px;
+}
+
+/* Skrollr */
+/* CSS */
+.hsContainer {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    opacity: 0;
+}
+.hsContent {
+    max-width: 450px;
+    margin: -150px auto 0 auto;
+    display: table-cell;
+    vertical-align: middle;
+    color: #ebebeb;
+    padding: 0 8%;
+    text-align: center
+}
+.bcg {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}
+
+/* Slide 1 */
+#slide-1 .bcg {background-image:url('../people_bg.jpg')}
+
+.homeSearch {
+	height: 575px;
+	padding-top: 10px;
+}
+
+/* CSS - Slide 2 */
+#slide-2 .bcg {
+    background: none;
+    background-color: #010101;
+    height:100px;
+    text-align: center
+}
+
+/* CSS - Slide 3 */
+#slide-3 .bcg {background-image:url('../books_bg.jpg')}
+
+.homeRecent {
+	height: 600px;
+	padding-top: 50px;
+}
+
+.homeRecent div {
+	width: 600px;
+	margin: auto;
+}
+
+/* Slide 4 */
+.curtainContainer {
+    width: 100%; height: 100%;
+    position: relative;
+}
+.curtainContainer .curtain {
+    width: 300%; height: 1px;
+    background-color: #000000;
+    position: absolute; top: 25%; left: 0;
+    opacity: 0
+}
+.curtainContainer .copy {
+    position: absolute;
+    bottom: 30%; left: 0;
+    width: 100%; text-align: center;
+}
+#slide-4 .bcg {background-image:url('../seattle_bg.jpg')}
+
+.homeTeam {
+	height: 600px;
+	padding-top: 50px;
+}
+
+.homeTeam div {
+	margin: auto;
+	width: 800px;
 }

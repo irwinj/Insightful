@@ -15,17 +15,18 @@ class PersonalitiesController < ApplicationController
   end
 
   def index
+    @recent = Personality.last(10).reverse
   end
 
   def recent
-    @recent = Personality.last(25).reverse
+    @recent = Personality.last(100).reverse
   end
 
   def show
     @params_id = params[:id]
     @personality = Personality.find(params[:id])
 
-    @comment = Comment.new 
+    @comment = Comment.new
     @comments = Comment.where(personality: @personality)
     # @comments = @personality.comments
 
@@ -49,10 +50,10 @@ class PersonalitiesController < ApplicationController
       config.access_token        = ENV["TWITTER_ACCESS_TOKEN"]
       config.access_token_secret = ENV["TWITTER_ACCESS_TOKEN_SECRET"]
     end
-  
+
     begin
       text = client.search(params[:q], result_type: "recent", :count => 200).map(&:text).join("\n")
-      # logger.debug(text.length) 
+      # logger.debug(text.length)
     rescue StandardError => error
       return redirect_to :back, alert: "Oops, there was a twitter error: #{error}"
     end

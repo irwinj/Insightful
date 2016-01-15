@@ -188,6 +188,8 @@ GEM
       actionpack (> 4, < 5.1)
       activemodel (> 4, < 5.1)
     simple_oauth (0.3.1)
+    skrollr-rails (0.6.29)
+      rails (>= 3.1.0)
     slop (3.6.0)
     spring (1.6.2)
     sprockets (3.5.2)
@@ -257,6 +259,7 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   simple_form
+  skrollr-rails
   spring
   twitter (~> 5.15)
   twitter-bootstrap-rails

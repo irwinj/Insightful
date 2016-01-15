@@ -36,14 +36,13 @@ gem 'bootstrap_form'
 # login
 gem 'devise'
 
-
 gem 'watson-api-client'
 
 gem 'simple_form'
 
 gem 'devise-bootstrap-views'
 
-
+gem 'skrollr-rails'
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
@@ -73,8 +72,7 @@ group :production do
   gem 'rails_12factor'
 
   gem 'puma'
-  
+
 end
 
 ruby "2.2.2"
-

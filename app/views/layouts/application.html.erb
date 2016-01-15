@@ -3,10 +3,12 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Insightful</title>
+
     <link href='//fonts.googleapis.com/css?family=Josefin+Slab:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
-    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= csrf_meta_tags %>
   </head>
   <body>
@@ -38,9 +40,9 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
              <li>
-                <p class="navbar-text">
+                <p id="userName" class="navbar-text">
                   <% if user_signed_in? %>
-                  Signed in as <%= link_to current_user.username, current_user %>
+                  Signed in as <span><%= link_to current_user.username, current_user %></span>
                   <% end %>
                 </p>
               </li>
@@ -74,6 +76,8 @@
     <%= javascript_include_tag 'application' %>
     <%= yield :javascripts %>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+
+
   </body>
 
 </html>
