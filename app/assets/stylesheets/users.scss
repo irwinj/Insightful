@@ -7,17 +7,39 @@
 }
 
 .container {
-	display: inline-block;
-
+  text-align: center;
+  margin: 0 auto;
 }
+
 .favorites {
 	text-align: right;
 	width: 300px;
   margin: 1em;
   display: inline-block;
 }
+.comments ul {
+  padding: 0;
+}
+
 .pre {
 	font-weight: bold;
 }
 
+.nav-pills .active a {
+  background-color: #9D593A !important;
+}
 
+.nav-pills .toggle a {
+  color: #2B9D91 !important;
+  font-size: 115%;
+}
+
+.user-nav {
+  width: 197px;
+}
+
+.nav-pills {
+  margin: auto;
+  min-width: 70px;
+  font-weight: bold;
+}

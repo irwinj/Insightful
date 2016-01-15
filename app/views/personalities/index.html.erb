@@ -6,12 +6,12 @@
 
     <div class="homeSearch">
       <div class="homeSearch">
+      </br>
       <div class="search_container">
-        <ul class="nav nav-pills nav-justified">
+        <ul class="personality-nav nav nav-pills nav-justified">
           <li id="offPill" class="active off"><a data-toggle="pill" href="#twitter">Twitter</a></li>
           <li class="other"><a data-toggle="pill" href="#text">Text</a></li>
         </ul>
-        </br>
         <div class="search_forms well">
           <div class="tab-content">
             <div id="twitter" class="tab-pane fade in active">
@@ -29,7 +29,7 @@
                 <h2><%= label_tag(:title, "Title") %></h2>
                 <p><%= text_field_tag(:title, nil, :required => true, maxlength: 50, minlength: 3, :class => "form-control", :placeholder => "Describe your text") %></p>
                 <h2><%= label_tag(:q, "Input text and find out the personality of the author") %></h2>
-                <%= text_area_tag(:q, nil, :required => true, size: "80x10", maxlength: 25000, minlength: 1000, :class => "form-control", :placeholder => "Enter body of text here. We suggest a minimum of 1,000 words for a more accurate personality portrait." ) %>
+                <%= text_area_tag(:q, nil, :required => true, size: "75x7", maxlength: 25000, minlength: 1000, :class => "form-control", :placeholder => "Enter body of text here. We suggest a minimum of 1,000 words for a more accurate personality portrait." ) %>
                 <div class="clear">
                   <%= submit_tag("Search", :class => "btn btn-default homeButt")%>
                 <% end %>
