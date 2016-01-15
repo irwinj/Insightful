@@ -19,7 +19,7 @@
           </br>
       </div>
       <div id="text" class="tab-pane fade">
-        <%= form_tag("/search", :method => "POST", :class => 'form') do %>
+        <%= form_tag("/watson/search", :method => "POST", :class => 'form') do %>
           <h2><%= label_tag(:title, "Search Title") %></h2>
           <p><%= text_field_tag(:title, nil, :required => true, maxlength: 50, minlength: 3 ) %></p>
           <h2><%= label_tag(:q, "Search for:") %></h2>
