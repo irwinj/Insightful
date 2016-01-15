@@ -1,0 +1,563 @@
+/* line 4, /Users/rachel/Code/Social-Personality-App/app/assets/stylesheets/personality.scss */
+#needs {
+  position: relative;
+}
+
+/* line 8, /Users/rachel/Code/Social-Personality-App/app/assets/stylesheets/personality.scss */
+#personality p {
+  font-size: 11px;
+}
+
+/* line 12, /Users/rachel/Code/Social-Personality-App/app/assets/stylesheets/personality.scss */
+#watson_data {
+  display: inline-block;
+  justify-content: space-around;
+  margin-bottom: 40px;
+}
+
+/* line 18, /Users/rachel/Code/Social-Personality-App/app/assets/stylesheets/personality.scss */
+.brand {
+  height: 27px;
+  margin-right: 10px;
+  display: inline-block;
+}
+
+/* line 24, /Users/rachel/Code/Social-Personality-App/app/assets/stylesheets/personality.scss */
+.brand span {
+  color: white;
+}
+
+/* line 28, /Users/rachel/Code/Social-Personality-App/app/assets/stylesheets/personality.scss */
+.dThree {
+  vertical-align: top;
+  display: inline-block;
+  border-radius: 15px;
+  background-color: white;
+  padding: 15px;
+  margin: 4px;
+  height: 650px;
+  width: 334px;
+}
+
+/* line 39, /Users/rachel/Code/Social-Personality-App/app/assets/stylesheets/personality.scss */
+.d3-tip {
+  width: 200px;
+  line-height: 1.2;
+  font-family: sans-serif;
+  font-weight: normal;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 2px;
+}
+
+/* Creates a small triangle extender for the tooltip */
+/* line 51, /Users/rachel/Code/Social-Personality-App/app/assets/stylesheets/personality.scss */
+.d3-tip:after {
+  box-sizing: border-box;
+  display: inline;
+  font-size: 10px;
+  width: 100%;
+  line-height: 1.2;
+  color: rgba(0, 0, 0, 0.8);
+  content: "\25BC";
+  position: absolute;
+  text-align: center;
+}
+
+/* Style northward tooltips differently */
+/* line 64, /Users/rachel/Code/Social-Personality-App/app/assets/stylesheets/personality.scss */
+.d3-tip.n:after {
+  margin: -1px 0 0 0;
+  top: 100%;
+  left: 0;
+}
+
+/* line 70, /Users/rachel/Code/Social-Personality-App/app/assets/stylesheets/personality.scss */
+.showMore {
+  font-size: 12px;
+  margin-left: 280px;
+  position: absolute;
+}
+
+/* line 76, /Users/rachel/Code/Social-Personality-App/app/assets/stylesheets/personality.scss */
+.hideContent {
+  overflow: hidden;
+  height: 650px;
+}
+
+/* line 81, /Users/rachel/Code/Social-Personality-App/app/assets/stylesheets/personality.scss */
+div .showContent {
+  height: 1500px;
+}
+
+/* line 85, /Users/rachel/Code/Social-Personality-App/app/assets/stylesheets/personality.scss */
+.search_container {
+  text-align: center;
+  margin: 0 auto;
+}
+
+/* line 91, /Users/rachel/Code/Social-Personality-App/app/assets/stylesheets/personality.scss */
+#offPill a {
+  color: #2B9D91;
+}
+
+/* line 95, /Users/rachel/Code/Social-Personality-App/app/assets/stylesheets/personality.scss */
+.personality-nav {
+  width: 145px;
+}
+
+/* line 99, /Users/rachel/Code/Social-Personality-App/app/assets/stylesheets/personality.scss */
+.nav-pills {
+  margin: auto;
+  min-width: 70px;
+  font-weight: bold;
+  font-size: 115%;
+}
+
+/* line 107, /Users/rachel/Code/Social-Personality-App/app/assets/stylesheets/personality.scss */
+.nav-pills .toggle a {
+  color: #2B9D91 !important;
+  font-size: 115%;
+}
+
+/* line 112, /Users/rachel/Code/Social-Personality-App/app/assets/stylesheets/personality.scss */
+.search_forms {
+  border-style: ridge;
+  border-color: #9D593A;
+  height: 400px;
+  width: 600px;
+  margin: 0 auto;
+}
+
+/* line 120, /Users/rachel/Code/Social-Personality-App/app/assets/stylesheets/personality.scss */
+.other a {
+  color: #2B9D91;
+  font-size: 100%;
+}
+
+/* line 125, /Users/rachel/Code/Social-Personality-App/app/assets/stylesheets/personality.scss */
+.nav-pills .active a {
+  background-color: #9D593A !important;
+  color: white !important;
+  text-shadow: 0px 0px 0.5px #000000;
+}
+
+/* line 131, /Users/rachel/Code/Social-Personality-App/app/assets/stylesheets/personality.scss */
+#twitter {
+  margin-top: 16%;
+}
+
+/* line 135, /Users/rachel/Code/Social-Personality-App/app/assets/stylesheets/personality.scss */
+.clear {
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+/* line 140, /Users/rachel/Code/Social-Personality-App/app/assets/stylesheets/personality.scss */
+.favorited .favorite {
+  display: none;
+}
+
+/* line 144, /Users/rachel/Code/Social-Personality-App/app/assets/stylesheets/personality.scss */
+.favorited .unfavorite {
+  display: inline;
+}
+
+/* line 148, /Users/rachel/Code/Social-Personality-App/app/assets/stylesheets/personality.scss */
+.unfavorite {
+  display: none;
+}
+
+/* line 152, /Users/rachel/Code/Social-Personality-App/app/assets/stylesheets/personality.scss */
+.homeButt {
+  margin-top: 10px;
+}
+
+/* line 156, /Users/rachel/Code/Social-Personality-App/app/assets/stylesheets/personality.scss */
+.recentTitle {
+  background-color: #2B9D91;
+}
+
+/* line 160, /Users/rachel/Code/Social-Personality-App/app/assets/stylesheets/personality.scss */
+.recentTitle h1 {
+  color: white;
+}
+
+/* line 164, /Users/rachel/Code/Social-Personality-App/app/assets/stylesheets/personality.scss */
+#homeTitle {
+  background-color: #2B9D91;
+  width: 500px;
+  margin-bottom: 20px;
+}
+
+/* line 170, /Users/rachel/Code/Social-Personality-App/app/assets/stylesheets/personality.scss */
+#homeTitle h1 {
+  color: white;
+}
+
+/* Skrollr */
+/* CSS */
+/* line 176, /Users/rachel/Code/Social-Personality-App/app/assets/stylesheets/personality.scss */
+.hsContainer {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  opacity: 0;
+}
+
+/* line 185, /Users/rachel/Code/Social-Personality-App/app/assets/stylesheets/personality.scss */
+.hsContent {
+  max-width: 450px;
+  margin: -150px auto 0 auto;
+  display: table-cell;
+  vertical-align: middle;
+  color: #ebebeb;
+  padding: 0 8%;
+  text-align: center;
+}
+
+/* line 194, /Users/rachel/Code/Social-Personality-App/app/assets/stylesheets/personality.scss */
+.bcg {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+
+/* Slide 1 */
+/* line 205, /Users/rachel/Code/Social-Personality-App/app/assets/stylesheets/personality.scss */
+.homeSearch {
+  height: 575px;
+  padding-top: 10px;
+}
+
+/* CSS - Slide 2 */
+/* line 211, /Users/rachel/Code/Social-Personality-App/app/assets/stylesheets/personality.scss */
+#slide-2 .bcg {
+  background: none;
+  background-color: #010101;
+  height: 100px;
+  text-align: center;
+}
+
+/* CSS - Slide 3 */
+/* line 219, /Users/rachel/Code/Social-Personality-App/app/assets/stylesheets/personality.scss */
+#slide-3 .bcg {
+  background-image: url("../books_bg.jpg");
+}
+
+/* line 221, /Users/rachel/Code/Social-Personality-App/app/assets/stylesheets/personality.scss */
+.homeRecent {
+  height: 600px;
+  padding-top: 50px;
+}
+
+/* line 226, /Users/rachel/Code/Social-Personality-App/app/assets/stylesheets/personality.scss */
+.homeRecent div {
+  width: 600px;
+  margin: auto;
+}
+
+/* Slide 4 */
+/* line 232, /Users/rachel/Code/Social-Personality-App/app/assets/stylesheets/personality.scss */
+.curtainContainer {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* line 236, /Users/rachel/Code/Social-Personality-App/app/assets/stylesheets/personality.scss */
+.curtainContainer .curtain {
+  width: 300%;
+  height: 1px;
+  background-color: #000000;
+  position: absolute;
+  top: 25%;
+  left: 0;
+  opacity: 0;
+}
+
+/* line 242, /Users/rachel/Code/Social-Personality-App/app/assets/stylesheets/personality.scss */
+.curtainContainer .copy {
+  position: absolute;
+  bottom: 30%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+
+/* line 247, /Users/rachel/Code/Social-Personality-App/app/assets/stylesheets/personality.scss */
+#slide-4 .bcg {
+  background-image: url("../seattle_bg.jpg");
+}
+
+/* line 249, /Users/rachel/Code/Social-Personality-App/app/assets/stylesheets/personality.scss */
+.homeTeam {
+  height: 600px;
+  padding-top: 50px;
+}
+
+/* line 254, /Users/rachel/Code/Social-Personality-App/app/assets/stylesheets/personality.scss */
+.teamThumbs {
+  height: 520px;
+  overflow: auto;
+}
+/* line 1, /Users/rachel/Code/Social-Personality-App/app/assets/stylesheets/show.scss */
+.favorite_button a {
+  background-color: #2B9D91;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-family: 'Josefin Slab', serif;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  padding: 8px 12px;
+  text-transform: uppercase;
+  width: auto;
+}
+
+/* line 15, /Users/rachel/Code/Social-Personality-App/app/assets/stylesheets/show.scss */
+.favorite_button a:hover {
+  text-decoration: none;
+  color: #fff;
+  background: #6EEADD;
+}
+/* line 1, /Users/rachel/Code/Social-Personality-App/app/assets/stylesheets/users.scss */
+.user {
+  font-size: 18px;
+  width: 45%;
+  margin: 1em;
+  display: inline-block;
+  clear: right;
+}
+
+/* line 9, /Users/rachel/Code/Social-Personality-App/app/assets/stylesheets/users.scss */
+.container {
+  text-align: center;
+  margin: 0 auto;
+}
+
+/* line 14, /Users/rachel/Code/Social-Personality-App/app/assets/stylesheets/users.scss */
+.favorites {
+  text-align: right;
+  width: 300px;
+  margin: 1em;
+  display: inline-block;
+}
+
+/* line 20, /Users/rachel/Code/Social-Personality-App/app/assets/stylesheets/users.scss */
+.comments ul {
+  padding: 0;
+}
+
+/* line 24, /Users/rachel/Code/Social-Personality-App/app/assets/stylesheets/users.scss */
+.pre {
+  font-weight: bold;
+}
+
+/* line 28, /Users/rachel/Code/Social-Personality-App/app/assets/stylesheets/users.scss */
+.nav-pills .active a {
+  background-color: #9D593A !important;
+}
+
+/* line 32, /Users/rachel/Code/Social-Personality-App/app/assets/stylesheets/users.scss */
+.nav-pills .toggle a {
+  color: #2B9D91 !important;
+  font-size: 115%;
+}
+
+/* line 37, /Users/rachel/Code/Social-Personality-App/app/assets/stylesheets/users.scss */
+.user-nav {
+  width: 197px;
+}
+
+/* line 41, /Users/rachel/Code/Social-Personality-App/app/assets/stylesheets/users.scss */
+.nav-pills {
+  margin: auto;
+  min-width: 70px;
+  font-weight: bold;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+
+ */
+/* line 19, /Users/rachel/Code/Social-Personality-App/app/assets/stylesheets/application.scss */
+h1 {
+  color: #1C665F;
+  font-weight: bold;
+}
+
+/* line 24, /Users/rachel/Code/Social-Personality-App/app/assets/stylesheets/application.scss */
+h2 {
+  font-weight: light;
+  font-size: 22px;
+}
+
+/* line 29, /Users/rachel/Code/Social-Personality-App/app/assets/stylesheets/application.scss */
+#userName {
+  margin-left: 15px;
+}
+
+/* line 33, /Users/rachel/Code/Social-Personality-App/app/assets/stylesheets/application.scss */
+.form {
+  text-align: center;
+}
+
+/* line 37, /Users/rachel/Code/Social-Personality-App/app/assets/stylesheets/application.scss */
+.nav .btn {
+  font-weight: bold;
+  font-size: 80%;
+}
+
+/* line 41, /Users/rachel/Code/Social-Personality-App/app/assets/stylesheets/application.scss */
+.tab-pane {
+  overflow: auto;
+  height: 360px;
+}
+
+/* line 46, /Users/rachel/Code/Social-Personality-App/app/assets/stylesheets/application.scss */
+footer {
+  text-align: center;
+  font-size: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding-top: 60px;
+}
+
+/* line 55, /Users/rachel/Code/Social-Personality-App/app/assets/stylesheets/application.scss */
+body {
+  font-family: 'Josefin Slab', serif;
+  color: #2B9D91;
+  background: rgba(255, 180, 145, 0.5);
+  padding-top: 70px;
+}
+/* line 66, /Users/rachel/Code/Social-Personality-App/app/assets/stylesheets/application.scss */
+body .navbar-default {
+  background-color: #2B9D91;
+  border-color: #9D593A;
+  font-size: 140%;
+  text-shadow: 0px 0px 1px #d2d2ec;
+  font-weight: bold;
+}
+/* line 72, /Users/rachel/Code/Social-Personality-App/app/assets/stylesheets/application.scss */
+body .navbar-default .navbar-brand {
+  color: #9D593A;
+}
+/* line 74, /Users/rachel/Code/Social-Personality-App/app/assets/stylesheets/application.scss */
+body .navbar-default .navbar-brand:hover, body .navbar-default .navbar-brand:focus {
+  color: #FFB491;
+}
+/* line 76, /Users/rachel/Code/Social-Personality-App/app/assets/stylesheets/application.scss */
+body .navbar-default .navbar-text {
+  color: #9D593A;
+}
+/* line 80, /Users/rachel/Code/Social-Personality-App/app/assets/stylesheets/application.scss */
+body .navbar-default .navbar-nav > li > a {
+  color: #9D593A;
+  margin-top: 5px;
+}
+/* line 83, /Users/rachel/Code/Social-Personality-App/app/assets/stylesheets/application.scss */
+body .navbar-default .navbar-nav > li > a:hover, body .navbar-default .navbar-nav > li > a:focus {
+  color: #FFB491;
+}
+/* line 97, /Users/rachel/Code/Social-Personality-App/app/assets/stylesheets/application.scss */
+body .navbar-default .navbar-nav > .active > a, body .navbar-default .navbar-nav > .active > a:hover, body .navbar-default .navbar-nav > .active > a:focus {
+  color: #FFB491;
+  background-color: #6EEADD;
+}
+/* line 101, /Users/rachel/Code/Social-Personality-App/app/assets/stylesheets/application.scss */
+body .navbar-default .navbar-nav > .open > a, body .navbar-default .navbar-nav > .open > a:hover, body .navbar-default .navbar-nav > .open > a:focus {
+  color: #FFB491;
+  background-color: #6EEADD;
+}
+/* line 104, /Users/rachel/Code/Social-Personality-App/app/assets/stylesheets/application.scss */
+body .navbar-default .navbar-toggle {
+  border-color: #6EEADD;
+  text-align: left !important;
+}
+/* line 107, /Users/rachel/Code/Social-Personality-App/app/assets/stylesheets/application.scss */
+body .navbar-default .navbar-toggle:hover, body .navbar-default .navbar-toggle:focus {
+  background-color: #6EEADD;
+}
+/* line 109, /Users/rachel/Code/Social-Personality-App/app/assets/stylesheets/application.scss */
+body .navbar-default .navbar-toggle .icon-bar {
+  background-color: #9D593A;
+}
+/* line 111, /Users/rachel/Code/Social-Personality-App/app/assets/stylesheets/application.scss */
+body .navbar-default .navbar-collapse,
+body .navbar-default .navbar-form {
+  border-color: #9D593A;
+}
+/* line 114, /Users/rachel/Code/Social-Personality-App/app/assets/stylesheets/application.scss */
+body .navbar-default .navbar-link {
+  color: #9D593A;
+}
+/* line 116, /Users/rachel/Code/Social-Personality-App/app/assets/stylesheets/application.scss */
+body .navbar-default .navbar-link:hover {
+  color: #FFB491;
+}
+@media (max-width: 767px) {
+  /* line 120, /Users/rachel/Code/Social-Personality-App/app/assets/stylesheets/application.scss */
+  body .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #9D593A;
+  }
+  /* line 122, /Users/rachel/Code/Social-Personality-App/app/assets/stylesheets/application.scss */
+  body .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, body .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #FFB491;
+  }
+  /* line 125, /Users/rachel/Code/Social-Personality-App/app/assets/stylesheets/application.scss */
+  body .navbar-default .navbar-nav .open .dropdown-menu > .active > a, body .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, body .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #FFB491;
+    background-color: #6EEADD;
+  }
+}
+
+/* line 130, /Users/rachel/Code/Social-Personality-App/app/assets/stylesheets/application.scss */
+.fullscreen-bg__video {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  background-size: cover;
+}
+/* line 1, /Users/rachel/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/devise-bootstrap-views-0.0.7/app/assets/stylesheets/devise_bootstrap_views.scss */
+.float-none {
+  float: none;
+}
+
+/* line 5, /Users/rachel/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/devise-bootstrap-views-0.0.7/app/assets/stylesheets/devise_bootstrap_views.scss */
+.panel-heading {
+  padding: 15px;
+}
+/* line 7, /Users/rachel/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/devise-bootstrap-views-0.0.7/app/assets/stylesheets/devise_bootstrap_views.scss */
+.panel-heading h4 {
+  margin: 0px;
+}
