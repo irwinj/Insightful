@@ -5,4 +5,5 @@
 //= require skrollr
 //= require skrollr.menu
 //= require skrollr.stylesheets
+//= require personality
 //= require_tree .

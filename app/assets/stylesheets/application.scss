@@ -38,6 +38,15 @@ h2 {
   font-size: 80%;
 }
 
+footer {
+  text-align: center;
+  font-size: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding-top: 60px;
+}
+
 body {
 	font-family: 'Josefin Slab', serif;
 	color: #2B9D91;
@@ -111,5 +120,20 @@ $dropDown       : false;
       > a, > a:hover, > a:focus {
         color: $colHighlight;
         background-color: $bgHighlight; }}}
-}
+}}
+
+.fullscreen-bg__video {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  background-size: cover;
 }

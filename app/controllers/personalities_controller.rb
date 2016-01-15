@@ -1,4 +1,5 @@
 class PersonalitiesController < ApplicationController
+  attr_reader :error
 
   def toggle_favorite
     personality_id = params[:id].to_i
@@ -38,6 +39,10 @@ class PersonalitiesController < ApplicationController
   end
 
   def twitter_search
+    personality = Personality.find_by_title(params[:q])
+    unless personality.blank?
+      return redirect_to(personality_path(personality), notice: 'Personality already exists for this search.')
+    end
 
     client = Twitter::REST::Client.new do |config|
       config.consumer_key        = ENV["TWITTER_CONSUMER_KEY"]
@@ -51,37 +56,52 @@ class PersonalitiesController < ApplicationController
       # logger.debug(text.length)
     rescue StandardError => error
       return redirect_to :back, alert: "Oops, there was a twitter error: #{error}"
-    else
-      service = WatsonAPIClient::PersonalityInsights.new(:user=>ENV["WATSON_USERNAME"],
-                                                     :password=>ENV["WATSON_PASSWORD"],
-                                                     :verify_ssl=>OpenSSL::SSL::VERIFY_NONE)
-
-      begin
-        service.profile(
-          'Content-Type'     => "text/plain",
-          'Accept'           => "application/json",
-          'Accept-Language'  => "en",
-          'Content-Language' => "en",
-          'body'             => text)
-      rescue StandardError => error
-        return redirect_to :back, alert: "Oops, there was a Watson error (probably not enough words): #{error}"
-      end
     end
 
+    personality = create_personality(text, params[:q])
+
+     if personality.present?
+      redirect_to personality
+    else
+      redirect_to :back, alert: "There was a watson error: #{@error}"
+    end
   end
 
-  def search
-    watson_result(params[:title], params[:q])
+  def watson_search
+    personality = create_personality(params[:q], params[:title])
+
+    if personality.present?
+      redirect_to personality
+    else
+      redirect_to :back, alert: "There was a watson error: #{@error}"
+    end
   end
 
   private
 
-  def watson_result(title, text)
+  def create_personality(text, title)
+    service = WatsonAPIClient::PersonalityInsights.new(:user=>ENV["WATSON_USERNAME"],
+                                                         :password=>ENV["WATSON_PASSWORD"],
+                                                         :verify_ssl=>OpenSSL::SSL::VERIFY_NONE)
+
+    begin
+      data = service.profile(
+        'Content-Type'     => "text/plain",
+        'Accept'           => "application/json",
+        'Accept-Language'  => "en",
+        'Content-Language' => "en",
+        'body'             => text)
+    rescue StandardError => error
+      @error = error
+      return false
+    end
+
     new_record = Personality.new
-    new_record.data = watson_search(text)
+    new_record.data = data
     new_record.input = text
     new_record.title = title
     new_record.save
-    redirect_to new_record
+
+    return new_record
   end
 end

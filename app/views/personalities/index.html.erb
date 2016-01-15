@@ -3,10 +3,9 @@
         data-center="background-position: 50% 0px;"
         data-top-bottom="background-position: 50% -100px;"
         data-anchor-target="#slide-1"
-    >
+
     <div class="homeSearch">
       <div class="homeSearch">
-      <%= render "/shared/searchform" %>
       <div class="search_container">
         <ul class="nav nav-pills nav-justified">
           <li id="offPill" class="active off"><a data-toggle="pill" href="#twitter">Twitter</a></li>
@@ -17,8 +16,8 @@
           <div class="tab-content">
             <div id="twitter" class="tab-pane fade in active">
              <%= form_tag("/twitter/search", :method => "POST", :class => 'form') do %>
-                <h2><%= label_tag(:q, "Search Twitter") %></h2>
-                <%= text_area_tag(:q, nil, :required => true, size: "20x1", maxlength: 50, minlength: 3, :class => "form-control", :placeholder => "e.g. keyword, #hashtag, @user") %>
+                <h2><%= label_tag(:q, "Find out the group personality of those discussing a topic on Twitter") %></h2>
+                <%= text_area_tag(:q, nil, :required => true, size: "20x1", maxlength: 50, minlength: 3, :class => "form-control", :placeholder => "#oprah, @oprah, or oprah is great") %>
                 <div class="clear">
                   <%= submit_tag("Search", :class => "btn btn-default homeButt")%>
                 <% end %>
@@ -28,9 +27,9 @@
             <div id="text" class="tab-pane fade">
               <%= form_tag("/search", :method => "POST", :class => 'form') do %>
                 <h2><%= label_tag(:title, "Title") %></h2>
-                <p><%= text_field_tag(:title, nil, :required => true, maxlength: 50, minlength: 3, :class => "form-control" ) %></p>
-                <h2><%= label_tag(:q, "Personality Text") %></h2>
-                <%= text_area_tag(:q, nil, :required => true, size: "80x10", maxlength: 25000, minlength: 1000, :class => "form-control" ) %>
+                <p><%= text_field_tag(:title, nil, :required => true, maxlength: 50, minlength: 3, :class => "form-control", :placeholder => "Describe your text") %></p>
+                <h2><%= label_tag(:q, "Input text and find out the personality of the author") %></h2>
+                <%= text_area_tag(:q, nil, :required => true, size: "80x10", maxlength: 25000, minlength: 1000, :class => "form-control", :placeholder => "Enter body of text here. We suggest a minimum of 1,000 words for a more accurate personality portrait." ) %>
                 <div class="clear">
                   <%= submit_tag("Search", :class => "btn btn-default homeButt")%>
                 <% end %>
@@ -48,7 +47,6 @@
                 data-106-top="opacity: 0"
                 data-anchor-target="#slide-1 h2"
             >
-                <h2>Fade out elements before <br>they leave viewport</h2>
             </div>
         </div>
       </div>
@@ -68,7 +66,6 @@
                     data-106-top="opacity: 0"
                     data-anchor-target="#slide-2 h2"
                 >
-                    Fade me in and out
                 </h2>
             </div>
         </div>
@@ -102,7 +99,6 @@
                     data--60p-top="opacity: 0;"
                     data-anchor-target="#slide-3"
                 >
-                    <h2>Fixed element fading in and out</h2>
                 </div>
             </div>
         </div>
@@ -123,7 +119,6 @@
                     data-106-top="opacity: 0"
                     data-anchor-target="#slide-2 h2"
                 >
-                    Fade me in and out
                 </h2>
             </div>
         </div>
@@ -155,9 +150,7 @@
                 data-106-top="opacity: 0;"
                 data-anchor-target="#slide-4 .copy"
             >
-                <h2>Curtain effect while you scroll</h2>
             </div>
-
         </div>
     </div>
 </section>

@@ -1,6 +1,5 @@
 <div class="row">
-  <div class="col-md-1">
-  </div><!-- end of col -->
+  <div class="col-md-1"></div>
   <div class="col-md-10">
     <h1>Personality Portrait</h1>
     <h3><%= @personality.title %></h3>
@@ -9,12 +8,12 @@
 
     <div id="personality" class="well"></div>
   </div>
-  <div class="col-md-1">
-  </div><!-- end of col -->
-</div> <!-- end of row -->
+  <div class="col-md-1"></div>
+</div>
+
+<!-- D3 personality profile -->
 <div class="row">
- <div class="col-md-1">
- </div>
+ <div class="col-md-1"></div>
   <div class="col-md-10 ">
     <div id="watson_data" params="<%= @params_id %>">
       <div id="bigFive" class="dThree">
@@ -30,33 +29,31 @@
         <h4>Values</h4>
       </div>
     </div>
-  </div><!-- end of col -->
-   <div class="col-md-1">
- </div>
-</div> <!-- end of row -->
+  </div>
+   <div class="col-md-1"></div>
+</div>
+
+<!-- Comments -->
 <div class="row">
-  <div class="col-md-3">
-  </div><!-- end of col -->
+  <div class="col-md-3"></div>
   <div class="col-md-6">
     <% if user_signed_in? %>
       <%= bootstrap_form_for [@personality, @comment] do |c| %>
-        <%= c.text_field(:body, :required => true, maxlength: 5000, minlength: 3) %>
-        <%= c.primary %>
+        <%= c.text_field(:body, :hide_label => true, :required => true, maxlength: 5000, minlength: 3, :placeholder => "Leave a comment here") %>
+        <%= c.primary(:class => "btn") %>
       <% end %>
     <% end %>
+    <br/>
     <% @comments.each do |comment| %>
     <div class="well">
       <h1>&quot;<%= comment.body %>&quot;</h1>
       <h1>-<%= link_to comment.user.username, user_path(comment.user) %></h1>
-
     </div>
     <% end %>
-  </div><!-- end of col -->
-  <div class="col-md-3">
-  </div><!-- end of col -->
-</div><!-- end of row -->
-
+  </div>
+  <div class="col-md-3"></div>
 </div>
+
 <script>
   $(document).ready(function(){
     dThree()

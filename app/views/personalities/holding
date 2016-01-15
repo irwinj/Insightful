@@ -41,3 +41,6 @@
               </li>
             <% end %>
           </ul>
+          <!-- <video loop muted autoplay poster=<%= asset_path('background.jpg') %> class="fullscreen-bg__video">
+              <source src="<%= asset_path('background.mp4') %>" type="video/mp4">
+          </video> -->

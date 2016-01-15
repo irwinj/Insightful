@@ -99,10 +99,15 @@ div .showContent {
 	font-family: 'Montserrat', sans-serif;
 }
 
+.toggle a {
+  color: #2B9D91 !important;
+  font-size: 115%;
+}
+
 .search_forms {
   border-style: ridge;
   border-color: #9D593A;
-  min-height: 460px;
+  min-height: 470px;
   width: 600px;
   margin: 0 auto;
 }
@@ -120,16 +125,8 @@ div .showContent {
 	text-shadow: 0px 0px 0.5px #000000;
 }
 
-.tab-content {
-	height: 400px;
-}
-
-#twitter {
-	padding-top: 75px;
-}
-
-.form {
-  margin: auto;
+#twitter{
+  margin-top: 22%;
 }
 
 .clear {
@@ -186,6 +183,7 @@ div .showContent {
 #slide-1 .bcg {background-image:url('../people_bg.jpg')}
 
 .homeSearch {
+	height: 575px;
 	padding-top: 10px;
 }
 

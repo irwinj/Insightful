@@ -467,3 +467,8 @@ function mbtiFunc(mbti) {
     });
   });
 }
+
+$(document).ready(function(){
+  var s = skrollr.init({forceHeight: false});
+;
+});
