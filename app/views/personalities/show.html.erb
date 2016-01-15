@@ -55,8 +55,10 @@
 </div>
 
 
-<script>
-  $(document).ready(function(){
-    dThree()
-  });
-</script>
+<% content_for :javascripts do %>
+  <script>
+    $(document).ready(function(){
+      dThree()
+    });
+  </script>
+<% end %>
