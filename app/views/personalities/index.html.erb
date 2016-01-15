@@ -85,7 +85,9 @@
     >
     <div class="homeRecent">
       <div class="well">
-        <h1>Recent Searches</h1>
+        <div id="homeTitle" class=" well text-center">
+          <h1>Recent Searches</h1>
+        </div>
         <ul>
           <% @recent.each do |item| %>
             <li>
@@ -93,6 +95,7 @@
             </li>
           <% end %>
         </ul>
+      </div>
       </div>
     </div>
         <div class="hsContainer">
