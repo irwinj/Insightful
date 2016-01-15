@@ -19,10 +19,13 @@
   <h4>Values</h4>
 </div>
 
-<%= bootstrap_form_for [@personality, @comment] do |c| %>
-  <%= c.text_field :body %>
-  <%= c.primary %>
+<% if user_signed_in? %>
+  <%= bootstrap_form_for [@personality, @comment] do |c| %>
+    <%= c.text_field :body %>
+    <%= c.primary %>
+  <% end %>
 <% end %>
+
 
 <% @comments.each do |comment| %>
 <div class="well">

@@ -2,8 +2,48 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.search_container {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.nav-pills {
+  margin: auto;
+  width: 10%;
+  min-width: 70px;
+  font-weight: bold;
+}
+
+#twitter a {
+  color: #2B9D91 !important;
+}
+
+.search_forms {
+  border-style: ridge;
+  border-color: #9D593A;
+  min-height: 400px;
+  width: 600px;
+  margin: 0 auto;
+}
+
+.other a{
+  color: #2B9D91 ;
+  font-size: 115%;
+}
+
+.active a{
+  background-color: #9D593A !important;
+  color: #2B9D91 !important;
+  font-size: 115%;
+}
+
+.form {
+  margin: auto;
+}
+
 .clear {
 	font-weight: bold;
+  border-radius: 4px;
 }
 
 .favorited .favorite {
