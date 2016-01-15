@@ -33,6 +33,10 @@ h2 {
   font-weight: bold;
   font-size: 80%;
 }
+.tab-pane {
+  overflow:scroll;
+  height: 360px
+}
 
 footer {
   text-align: center;

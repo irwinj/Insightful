@@ -87,27 +87,28 @@ div .showContent {
   margin: 0 auto;
 }
 
+.personality-nav {
+  width: 145px;
+}
+
 .nav-pills {
   margin: auto;
-  width: 10%;
   min-width: 70px;
   font-weight: bold;
 }
 
-.toggle a {
+.nav-pills .toggle a {
   color: #2B9D91 !important;
   font-size: 115%;
 }
 
 .search_forms {
-  border-style: ridge;
-  border-color: #9D593A;
   min-height: 400px;
   width: 600px;
   margin: 0 auto;
 }
 
-.active a{
+.nav-pills .active a {
   background-color: #9D593A !important;
 }
 

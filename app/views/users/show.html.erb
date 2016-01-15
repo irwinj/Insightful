@@ -1,31 +1,48 @@
 <div class="container">
   <div class="user">
     <ul>
-     <h1> <span class="pre">Username: </span> 
-      <%= @user.username %></h1>
+      <span class="pre">Username: </span> 
+      <%= @user.username %>
     </ul>
     <ul>
-     <h2> <span class="pre">Email: </span>
-      <%= @user.email %></h2>
+    <span class="pre">Email: </span>
+    <%= @user.email %>
     </ul>
   </div>
+</div>
 
-  <div class="favorites">
-    <h1>My Favorites</h1>
-      <ul>
-        <% @user.personalities.each do |personality| %>
-        <h2><%= link_to personality.title, personality %></h2>
-        <% end %>
-      </ul>
-  </div>
+<div class="container">
+  <ul class="user-nav nav nav-pills nav-justified">
+    <li class="active toggle"><a data-toggle="pill" href="#favorites">Favorites</a></li>
+    <li class="toggle"><a data-toggle="pill" href="#comments">Comments</a></li>
+  </ul>
 
-  <div class="comments">
-    <h1>My Comments</h1>
-      <ul>
-        <% @comments.each do |comment| %>
-          <h2>-<%= link_to comment.personality.title, '/personalities/'+comment.personality_id.to_s %></h2>
-          <h3>"<%= comment.body %>"</h3>
-        <% end %>
-      </ul>
+  <div class="search_forms well">
+    <div class="tab-content">
+
+      <div id="favorites" class="tab-pane fade in active">
+        <div>
+          <ul>
+            <% @user.personalities.each do |personality| %>
+              <h3><%= link_to personality.title, personality %></h3>
+             <% end %>
+           </ul>
+        </div>
+        </br>
+      </div>
+    
+      <div id="comments" class="tab-pane fade">
+        <div class="comments">
+          <ul>
+            <% @comments.each do |comment| %>
+              <h3><%= link_to comment.personality.title, '/personalities/'+comment.personality_id.to_s %></h3>
+              <h4>"<%= comment.body %>"</h4>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    
+    </div>
   </div>
 </div>
+<br/>
