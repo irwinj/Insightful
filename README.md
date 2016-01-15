@@ -1,5 +1,6 @@
 # Insightful App
 WDI05 Project 3
+
 <img src="http://i.imgur.com/DrITw2i.png" alt="logo">  
 
 ###About
