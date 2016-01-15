@@ -29,7 +29,7 @@
                 <h2><%= label_tag(:title, "Title") %></h2>
                 <p><%= text_field_tag(:title, nil, :required => true, maxlength: 50, minlength: 3, :class => "form-control", :placeholder => "Describe your text") %></p>
                 <h2><%= label_tag(:q, "Input text and find out the personality of the author") %></h2>
-                <%= text_area_tag(:q, nil, :required => true, size: "75x7", maxlength: 25000, minlength: 1000, :class => "form-control", :placeholder => "Enter body of text here. We suggest a minimum of 1,000 words for a more accurate personality portrait." ) %>
+                <%= text_area_tag(:q, nil, :required => true, size: "75x6", maxlength: 25000, minlength: 1000, :class => "form-control", :placeholder => "Enter body of text here. We suggest a minimum of 1,000 words for a more accurate personality portrait." ) %>
                 <div class="clear">
                   <%= submit_tag("Search", :class => "btn btn-default homeButt")%>
                 <% end %>
