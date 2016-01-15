@@ -150,6 +150,24 @@ div .showContent {
 	margin-top: 10px;
 }
 
+.recentTitle {
+	background-color: #2B9D91;
+}
+
+.recentTitle h1 {
+	color: rgb(255, 255, 255);
+}
+
+#homeTitle {
+	background-color: #2B9D91;
+	width: 500px;
+	margin-bottom: 20px;
+}
+
+#homeTitle h1 {
+	color: rgb(255, 255, 255);
+}
+
 /* Skrollr */
 /* CSS */
 .hsContainer {
@@ -180,7 +198,6 @@ div .showContent {
 }
 
 /* Slide 1 */
-#slide-1 .bcg {background-image:url('../people_bg.jpg')}
 
 .homeSearch {
 	height: 575px;
@@ -232,5 +249,5 @@ div .showContent {
 }
 
 .teamThumbs {
-	height: 500px;
+	height: 520px;
 }

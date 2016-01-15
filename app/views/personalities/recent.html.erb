@@ -1,8 +1,18 @@
-<h1>Recent Searches</h1>
-<ul>
-  <% @recent.each do |item| %>
-    <li>
-      <h3><%= link_to item.title, item %></h3>
-    </li>
-  <% end %>
-</ul>
+<div class="row">
+  <div class="col-md-2">
+  </div>
+  <div class="col-md-8 well">
+    <div class="recentTitle well">
+      <h1>Recent Searches</h1>
+    </div>
+    <ul>
+      <% @recent.each do |item| %>
+        <li>
+          <h3><%= link_to item.title, item %></h3>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="col-md-2">
+  </div>
+</div>
