@@ -3,7 +3,6 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 #needs {
 	position: relative;
-
 }
 
 #personality p {
@@ -11,7 +10,7 @@
 }
 
 #watson_data {
-	display:inline-flex;
+	display: inline-block;
 	justify-content: space-around;
 	margin-bottom: 40px;
 }
@@ -32,14 +31,14 @@
 	border-radius: 15px;
 	background-color: rgb(255, 255, 255);
 	padding: 15px;
-	margin: 6px;
+	margin: 4px;
 	height: 650px;
-	width: 350px;
+	width: 334px;
 }
 
 .d3-tip {
 	width: 200px;
-  line-height: 1;
+  line-height: 1.2;
 	font-family: sans-serif;
   font-weight: normal;
   padding: 12px;
@@ -54,7 +53,7 @@
   display: inline;
   font-size: 10px;
   width: 100%;
-  line-height: 1;
+  line-height: 1.2;
   color: rgba(0, 0, 0, 0.8);
   content: "\25BC";
   position: absolute;
