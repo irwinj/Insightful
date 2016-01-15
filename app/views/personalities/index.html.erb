@@ -1,17 +1,17 @@
 
-<%= render "/shared/searchform" %>
+
 <div class="search_container">
   <ul class="nav nav-pills nav-justified">
-    <li id="something" class="active"><a data-toggle="pill" href="#twitter">Twitter</a></li>
-    <li class="other"><a data-toggle="pill" href="#text">Text</a></li>
+    <li id="something" class="active toggle"><a data-toggle="pill" href="#twitter">Twitter</a></li>
+    <li class="other toggle"><a data-toggle="pill" href="#text">Text</a></li>
   </ul>
   </br>
   <div class="search_forms">
     <div class="tab-content">
       <div id="twitter" class="tab-pane fade in active">
        <%= form_tag("/twitter/search", :method => "POST", :class => 'form') do %>
-          <h2><%= label_tag(:q, "Search for:") %></h2>
-          <%= text_area_tag(:q, nil, :required => true, size: "20x1", maxlength: 50, minlength: 3) %>
+          <h2><%= label_tag(:q, "Find out the group personality of those discussing a topic on Twitter") %></h2>
+          <%= text_area_tag(:q, nil, :required => true, size: "27x1", maxlength: 50, minlength: 3, :placeholder => "#oprah, @oprah, or oprah is great") %>
           <div class="clear">
             <%= submit_tag("Search", :class => "btn")%>
           <% end %>
@@ -20,10 +20,10 @@
       </div>
       <div id="text" class="tab-pane fade">
         <%= form_tag("/search", :method => "POST", :class => 'form') do %>
-          <h2><%= label_tag(:title, "Search Title") %></h2>
-          <p><%= text_field_tag(:title, nil, :required => true, maxlength: 50, minlength: 3 ) %></p>
-          <h2><%= label_tag(:q, "Search for:") %></h2>
-          <%= text_area_tag(:q, nil, :required => true, size: "80x10", maxlength: 25000, minlength: 1000 ) %>
+          <h2><%= label_tag(:title, "Title") %></h2>
+          <p><%= text_field_tag(:title, nil, :required => true, maxlength: 50, minlength: 3, :placeholder => "Describe your text") %></p>
+          <h2><%= label_tag(:q, "Input text and find out the personality of the author") %></h2>
+          <%= text_area_tag(:q, nil, :required => true, size: "80x10", maxlength: 25000, minlength: 1000, :placeholder => "Enter body of text here. We suggest a minimum of 1,000 words for a more accurate personality profile." ) %>
           <div class="clear">
             <%= submit_tag("Search", :class => "btn")%>
           <% end %>
