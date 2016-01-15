@@ -37,7 +37,10 @@ h2 {
 footer {
   text-align: center;
   font-size: 10px;
-  margin-top: 99%;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding-top: 60px;
 }
 
 body {

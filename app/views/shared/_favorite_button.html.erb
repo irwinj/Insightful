@@ -4,7 +4,7 @@
   <%= link_to('Unfavorite', "/personalities/#{@personality.id}/toggle_favorite", :method => :post, :remote => true, :class => "unfavorite") %>
   </div>
 <% end %>
-
+</br>
 <script type="text/javascript">
   $('.favorite_button a').on("ajax:success", function(e) {
     $(e.target)

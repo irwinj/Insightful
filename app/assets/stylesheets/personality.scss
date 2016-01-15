@@ -94,8 +94,9 @@ div .showContent {
   font-weight: bold;
 }
 
-.toggle {
-   color: #2B9D91 !important;
+.toggle a {
+  color: #2B9D91 !important;
+  font-size: 115%;
 }
 
 .search_forms {
@@ -106,15 +107,8 @@ div .showContent {
   margin: 0 auto;
 }
 
-.other a{
-  color: #2B9D91;
-  font-size: 115%;
-}
-
 .active a{
   background-color: #9D593A !important;
-  color: #2B9D91 !important;
-  font-size: 115%;
 }
 
 #twitter{

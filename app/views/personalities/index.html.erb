@@ -2,11 +2,11 @@
 
 <div class="search_container">
   <ul class="nav nav-pills nav-justified">
-    <li id="something" class="active toggle"><a data-toggle="pill" href="#twitter">Twitter</a></li>
-    <li class="other toggle"><a data-toggle="pill" href="#text">Text</a></li>
+    <li class="active toggle"><a data-toggle="pill" href="#twitter">Twitter</a></li>
+    <li class="toggle"><a data-toggle="pill" href="#text">Text</a></li>
   </ul>
   </br>
-  <div class="search_forms">
+  <div class="search_forms well">
     <div class="tab-content">
       <div id="twitter" class="tab-pane fade in active">
        <%= form_tag("/twitter/search", :method => "POST", :class => 'form') do %>
@@ -23,7 +23,7 @@
           <h2><%= label_tag(:title, "Title") %></h2>
           <p><%= text_field_tag(:title, nil, :required => true, maxlength: 50, minlength: 3, :placeholder => "Describe your text") %></p>
           <h2><%= label_tag(:q, "Input text and find out the personality of the author") %></h2>
-          <%= text_area_tag(:q, nil, :required => true, size: "80x10", maxlength: 25000, minlength: 1000, :placeholder => "Enter body of text here. We suggest a minimum of 1,000 words for a more accurate personality profile." ) %>
+          <%= text_area_tag(:q, nil, :required => true, size: "75x7", maxlength: 25000, minlength: 1000, :placeholder => "Enter body of text here. We suggest a minimum of 1,000 words for a more accurate personality portrait." ) %>
           <div class="clear">
             <%= submit_tag("Search", :class => "btn")%>
           <% end %>
@@ -33,6 +33,7 @@
     </div>
   </div>
 </div>
+<br/>
 
 
 
