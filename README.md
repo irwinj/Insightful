@@ -5,7 +5,7 @@ WDI05 Project 3
 
 ###About
 
-Insight aggregates text and pushes it into the Watson PI API, this allows us to describe the personality of a group of people to describe the personality of groups talking about a trending twitter topic, user or string, or generally any text (1000 character - 25000 character) entered by the user. A switch at the bottom will allow you to select Twitter or other. The produced personalities are transformed into Myers Briggs types, and visualized via D3 tools. If a user logs in to our validated login we’ll give the option of saving previous personality profiles, showing recent profiles and commenting on them.
+Insightful aggregates text and pushes it into the Watson PI API, this allows us to describe the personality of a group of people talking about a trending twitter topic, user or string, or generally any text (1000 character - 25000 character) entered by the user. A switch at the bottom will allow you to select Twitter or other. The produced personalities are transformed into Myers Briggs types, and visualized via D3 tools. If a user logs in using our validated login we’ll give the option of saving previous personality profiles, showing recent profiles and commenting on them.
 
 
 ###Installation
